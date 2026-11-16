@@ -3,129 +3,299 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>ZELQIO by Joy Guru Fashions</title>
-<meta name="description" content="ZELQIO - bold, made-to-order designs for your desk, sofa, phone and everyday carry. By Joy Guru Fashions, India.">
+<title>ZELQIO</title>
+<meta name="description" content="ZELQIO - bold, made-to-order designs for your desk, sofa, table and everyday carry. Made in India.">
 <meta name="theme-color" content="#07070d">
 <style>
-:root{--bg:#07070d;--fg:#f4f4fb;--mut:#9a9ab5;--a:#7c5cff;--b:#00e5ff;--c:#ff3ec9;--card:rgba(255,255,255,.05);--bd:rgba(255,255,255,.1)}
-*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#07070d;--fg:#f4f4fb;--mut:#9a9ab5;--a:#7c5cff;--b:#00e5ff;--c:#ff3ec9;--card:rgba(255,255,255,.06);--bd:rgba(255,255,255,.12)}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;overflow-x:hidden;line-height:1.5}
-.orb{position:fixed;border-radius:50%;filter:blur(90px);opacity:.45;z-index:-1;animation:float 18s ease-in-out infinite}
+button{font-family:inherit;color:inherit}
+.orb{position:fixed;border-radius:50%;filter:blur(90px);opacity:.42;z-index:-1;animation:float 18s ease-in-out infinite}
 .o1{width:50vmax;height:50vmax;background:var(--a);top:-15vmax;left:-10vmax}
 .o2{width:40vmax;height:40vmax;background:var(--c);bottom:-12vmax;right:-8vmax;animation-delay:-6s}
-.o3{width:30vmax;height:30vmax;background:var(--b);top:40%;left:45%;opacity:.25;animation-delay:-11s}
+.o3{width:30vmax;height:30vmax;background:var(--b);top:40%;left:45%;opacity:.22;animation-delay:-11s}
 @keyframes float{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(6vmax,4vmax) scale(1.15)}}
-#glow{position:fixed;width:360px;height:360px;border-radius:50%;pointer-events:none;background:radial-gradient(circle,rgba(124,92,255,.22),transparent 65%);transform:translate(-50%,-50%);z-index:-1;left:50%;top:30%}
-nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:14px 5vw;backdrop-filter:blur(14px);background:rgba(7,7,13,.55);border-bottom:1px solid var(--bd)}
+#glow{position:fixed;width:380px;height:380px;border-radius:50%;pointer-events:none;background:radial-gradient(circle,rgba(124,92,255,.22),transparent 65%);transform:translate(-50%,-50%);z-index:-1;left:50%;top:30%}
+nav{position:fixed;top:0;left:0;right:0;z-index:30;display:flex;justify-content:space-between;align-items:center;padding:14px 5vw;backdrop-filter:blur(14px);background:rgba(7,7,13,.55);border-bottom:1px solid var(--bd)}
 .logo{font-weight:900;letter-spacing:.28em;font-size:1.15rem;background:linear-gradient(90deg,var(--b),var(--a),var(--c));-webkit-background-clip:text;background-clip:text;color:transparent;text-decoration:none}
-nav a.l{color:var(--mut);text-decoration:none;margin-left:22px;font-size:.9rem;transition:.2s}
-nav a.l:hover{color:var(--fg)}
-@media(max-width:560px){nav a.l{display:none}}
+nav .lk a{color:var(--mut);text-decoration:none;margin-left:22px;font-size:.9rem;transition:.2s}
+nav .lk a:hover{color:var(--fg)}
 .hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:110px 6vw 60px}
 .tag{border:1px solid var(--bd);background:var(--card);padding:6px 16px;border-radius:99px;font-size:.78rem;color:var(--b);letter-spacing:.14em;text-transform:uppercase;margin-bottom:26px}
-h1{font-size:clamp(3rem,13vw,10rem);line-height:.95;font-weight:900;letter-spacing:.06em;background:linear-gradient(110deg,var(--b),var(--a) 40%,var(--c) 75%,var(--b));background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 7s linear infinite}
+h1{font-size:clamp(3.2rem,14vw,10.5rem);line-height:.95;font-weight:900;letter-spacing:.06em;background:linear-gradient(110deg,var(--b),var(--a) 40%,var(--c) 75%,var(--b));background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 7s linear infinite}
 @keyframes shine{to{background-position:250% 0}}
 .sub{max-width:34rem;color:var(--mut);margin:24px auto 34px;font-size:clamp(1rem,2.4vw,1.2rem)}
 .rot{color:var(--fg);font-weight:700;display:inline-block;min-width:7ch;transition:opacity .3s,transform .3s}
-.btn{display:inline-block;padding:14px 30px;border-radius:99px;background:linear-gradient(90deg,var(--a),var(--c));color:#fff;text-decoration:none;font-weight:700;box-shadow:0 0 30px rgba(124,92,255,.5);transition:.25s}
-.btn:hover{transform:translateY(-3px) scale(1.04);box-shadow:0 0 50px rgba(255,62,201,.6)}
-.mq{overflow:hidden;border-block:1px solid var(--bd);background:rgba(255,255,255,.03);padding:14px 0;white-space:nowrap}
-.mq div{display:inline-block;animation:mq 28s linear infinite;color:var(--mut);letter-spacing:.3em;font-size:.85rem;text-transform:uppercase}
-@keyframes mq{to{transform:translateX(-50%)}}
-section{padding:90px 5vw;max-width:1280px;margin:0 auto}
+.btn{display:inline-block;padding:14px 30px;border-radius:99px;background:linear-gradient(90deg,var(--a),var(--c));color:#fff;text-decoration:none;font-weight:700;border:0;cursor:pointer;font-size:1rem;box-shadow:0 0 30px rgba(124,92,255,.5);transition:.25s}
+.btn:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 0 50px rgba(255,62,201,.6)}
+.btn[disabled]{opacity:.5;pointer-events:none}
+.btn.ghost{background:var(--card);border:1px solid var(--bd);box-shadow:none}
+.hint{margin-top:40px;color:var(--mut);font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;animation:bob 2s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(8px)}}
+section{padding:80px 5vw;max-width:1280px;margin:0 auto}
 h2{font-size:clamp(1.9rem,5vw,3.2rem);font-weight:800;margin-bottom:8px}
-.lead{color:var(--mut);margin-bottom:30px}
-.chips{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:34px}
-.chip{border:1px solid var(--bd);background:var(--card);color:var(--fg);padding:10px 18px;border-radius:99px;cursor:pointer;font-size:.9rem;transition:.25s;font-family:inherit}
-.chip:hover{border-color:var(--a)}
-.chip.on{background:linear-gradient(90deg,var(--a),var(--c));border-color:transparent;box-shadow:0 0 22px rgba(124,92,255,.5)}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:22px}
-.card{position:relative;border:1px solid var(--bd);background:var(--card);border-radius:22px;overflow:hidden;backdrop-filter:blur(10px);transition:transform .3s,border-color .3s,opacity .4s;text-decoration:none;color:inherit;display:block;animation:pop .6s both}
-.card:hover{transform:translateY(-8px);border-color:var(--b);box-shadow:0 20px 50px rgba(0,229,255,.12)}
-@keyframes pop{from{opacity:0;transform:translateY(24px) scale(.96)}to{opacity:1;transform:none}}
-.img{aspect-ratio:1/1;background:linear-gradient(135deg,rgba(124,92,255,.35),rgba(255,62,201,.25),rgba(0,229,255,.25));background-size:200% 200%;animation:shine 8s linear infinite;display:flex;align-items:center;justify-content:center;font-size:3.4rem}
-.img img{width:100%;height:100%;object-fit:cover;display:block}
-.info{padding:16px 18px 20px}
-.cat{font-size:.7rem;letter-spacing:.18em;color:var(--b);text-transform:uppercase}
-.nm{font-weight:700;margin:4px 0 6px}
-.pr{color:var(--mut);display:flex;justify-content:space-between;align-items:center;font-size:.95rem}
-.go{color:var(--c);font-weight:700}
-.soon{opacity:.75}
-.cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
-.cc{border:1px solid var(--bd);background:var(--card);border-radius:20px;padding:26px;transition:.3s}
-.cc:hover{transform:translateY(-6px);border-color:var(--c)}
-.cc b{display:block;font-size:2rem;margin-bottom:8px}
-.cc span{color:var(--mut);font-size:.9rem}
-footer{border-top:1px solid var(--bd);text-align:center;padding:50px 5vw 70px;color:var(--mut);font-size:.9rem}
-footer .logo{display:inline-block;margin-bottom:10px}
+.lead{color:var(--mut);margin-bottom:26px}
+#picker{text-align:center;min-height:100svh;display:flex;flex-direction:column;justify-content:center}
+.stage{position:relative;height:min(60vh,520px);perspective:1500px;touch-action:pan-y;user-select:none;-webkit-user-select:none;cursor:grab;margin:10px 0 20px}
+.ring{position:absolute;inset:0;transform-style:preserve-3d}
+.cc{position:absolute;left:50%;top:50%;width:var(--cw);height:var(--ch);margin:calc(var(--ch) / -2) 0 0 calc(var(--cw) / -2);border-radius:26px;padding:22px;display:flex;flex-direction:column;justify-content:flex-end;align-items:flex-start;text-align:left;background:var(--g);border:1px solid rgba(255,255,255,.2);transition:transform .8s cubic-bezier(.2,.8,.2,1),opacity .6s;backface-visibility:hidden;overflow:hidden;cursor:pointer}
+.ring.drag .cc{transition:none}
+.cc .em{font-size:4.6rem;position:absolute;top:16px;left:20px;filter:drop-shadow(0 10px 18px rgba(0,0,0,.4))}
+.cc h3{font-size:1.6rem}
+.cc small{color:rgba(255,255,255,.8)}
+.cc.front{box-shadow:0 0 70px rgba(124,92,255,.55)}
+.ctl{display:flex;gap:14px;justify-content:center;align-items:center;flex-wrap:wrap}
+.ar{width:48px;height:48px;border-radius:50%;border:1px solid var(--bd);background:var(--card);font-size:1.3rem;cursor:pointer}
+.ar:hover{border-color:var(--b)}
+.dots{display:flex;gap:8px;justify-content:center;margin-top:16px}
+.dots i{width:8px;height:8px;border-radius:50%;background:var(--bd);transition:.3s}
+.dots i.on{background:var(--c);width:24px;border-radius:8px}
+#shop{display:none;padding-top:70px;scroll-margin-top:40px}
+#shop.on{display:block;animation:pop .6s both}
+@keyframes pop{from{opacity:0;transform:translateY(24px) scale(.98)}to{opacity:1;transform:none}}
+.chips{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0 28px}
+.chip{border:1px solid var(--bd);background:var(--card);padding:9px 16px;border-radius:99px;cursor:pointer;font-size:.9rem;transition:.25s}
+.chip.on{background:linear-gradient(90deg,var(--a),var(--c));border-color:transparent}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:22px}
+.pc{border:1px solid var(--bd);background:var(--card);border-radius:22px;overflow:hidden;text-align:left;cursor:pointer;display:block;width:100%;transition:transform .3s,border-color .3s;animation:pop .6s both}
+.pc:hover{transform:translateY(-8px);border-color:var(--b);box-shadow:0 20px 50px rgba(0,229,255,.12)}
+.pc .im{aspect-ratio:1/1;background:#fff}
+.pc img{width:100%;height:100%;object-fit:cover;display:block}
+.in{padding:14px 16px 18px}
+.nm{font-weight:700;margin-bottom:6px;font-size:.98rem}
+.pr{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+.of{font-weight:800;font-size:1.1rem}
+.pr s{color:var(--mut);font-size:.9rem}
+.pr em{font-style:normal;color:#3dffb0;font-size:.8rem;font-weight:700}
+#ov{position:fixed;inset:0;z-index:60;background:rgba(3,3,8,.72);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:20px}
+#ov.on{display:flex}
+.pn{position:relative;background:#0e0e1a;border:1px solid var(--bd);border-radius:26px;width:min(980px,100%);max-height:90vh;overflow:auto;display:grid;grid-template-columns:1fr 1fr;animation:pop .4s both}
+.x{position:absolute;top:12px;right:12px;z-index:3;width:40px;height:40px;border-radius:50%;border:1px solid var(--bd);background:rgba(7,7,13,.8);cursor:pointer;font-size:1.1rem}
+.gal{background:#fff;display:flex;flex-direction:column}
+.gal .mi{aspect-ratio:1/1;width:100%;object-fit:cover}
+.th{display:flex;gap:8px;padding:10px;overflow:auto;background:#f1f1f6}
+.th img{width:58px;height:58px;object-fit:cover;border-radius:10px;border:2px solid transparent;cursor:pointer;flex:none}
+.th img.on{border-color:var(--a)}
+.det{padding:30px 28px;display:flex;flex-direction:column;gap:14px}
+.det h2{font-size:1.5rem;margin:0;padding-right:36px}
+.det p{color:var(--mut);font-size:.95rem}
+.big{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.big .of{font-size:1.9rem}
+.note{font-size:.8rem;color:var(--mut);border:1px dashed var(--bd);border-radius:12px;padding:10px 12px}
+.qty{display:flex;align-items:center;gap:12px}
+.qty button{width:38px;height:38px;border-radius:50%;border:1px solid var(--bd);background:var(--card);font-size:1.1rem;cursor:pointer}
+.fm{display:grid;gap:10px}
+.fm input,.fm select{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--bd);background:rgba(255,255,255,.06);color:var(--fg);font-size:1rem;font-family:inherit}
+.fm select option{color:#111}
+.r2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.who{display:flex;align-items:center;gap:10px;padding:10px 12px;border:1px solid var(--bd);border-radius:12px;font-size:.9rem}
+.err{color:#ff7a90;font-size:.85rem;min-height:1.2em}
+.ck{display:flex;gap:10px;font-size:.82rem;color:var(--mut);align-items:flex-start}
+.ck input{width:auto;margin-top:3px}
+.ck a{color:var(--b)}
+footer{border-top:1px solid var(--bd);text-align:center;padding:46px 5vw 90px;color:var(--mut);font-size:.88rem}
+footer .logo{display:inline-block;margin-bottom:12px}
+footer .fl{display:flex;gap:8px 20px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+footer a{color:var(--mut)}
+footer a:hover{color:var(--fg)}
 .rv{opacity:0;transform:translateY(30px);transition:opacity .8s,transform .8s}
 .rv.in{opacity:1;transform:none}
+:root{--cw:250px;--ch:340px}
+@media(max-width:1023px){:root{--cw:230px;--ch:320px}.grid{grid-template-columns:repeat(3,1fr)}.pn{grid-template-columns:1fr;width:min(620px,100%)}}
+@media(max-width:640px){
+:root{--cw:66vw;--ch:50vh}
+nav{top:auto;bottom:0;border-bottom:0;border-top:1px solid var(--bd);justify-content:center;padding:10px 4vw calc(10px + env(safe-area-inset-bottom))}
+nav .logo{display:none}
+nav .lk{display:flex;width:100%;justify-content:space-around}
+nav .lk a{margin:0;font-size:.85rem;padding:6px 14px}
+section{padding:60px 5vw}
+.grid{grid-template-columns:1fr 1fr;gap:12px}
+.in{padding:10px 12px 14px}.nm{font-size:.86rem}.of{font-size:1rem}
+#ov{align-items:flex-end;padding:0}
+.pn{width:100%;max-height:93svh;border-radius:26px 26px 0 0;animation:up .4s both}
+.det{padding:22px 18px 30px}
+.btn{width:100%;text-align:center}
+.stage{height:54vh}
+}
+@keyframes up{from{transform:translateY(100%)}to{transform:none}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
 </style>
 </head>
 <body>
 <div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div><div id="glow"></div>
-<nav><a class="logo" href="#top">ZELQIO</a><div><a class="l" href="#shop">Shop</a><a class="l" href="#cats">Categories</a><a class="l" href="#about">About</a></div></nav>
+<nav><a class="logo" href="#top">ZELQIO</a><div class="lk"><a href="#top">Home</a><a href="#picker">Categories</a><a href="#about">About</a></div></nav>
 <header class="hero" id="top">
 <div class="tag">Made to order &middot; Designed in India</div>
 <h1>ZELQIO</h1>
 <p class="sub">Bold designs for your <span class="rot" id="rot">desk</span>. Printed on demand, shipped across India.</p>
-<a class="btn" href="#shop">Explore the drop</a>
+<a class="btn" href="#picker">Pick your vibe</a>
+<div class="hint">Scroll</div>
 </header>
-<div class="mq"><div id="mq"></div></div>
-<section id="shop" class="rv">
-<h2>The Drop</h2>
-<p class="lead">Fresh designs, straight from the studio. Tap a category.</p>
+<section id="picker">
+<h2>Pick your vibe</h2>
+<p class="lead" id="plead">Swipe, drag or tap a category to explore.</p>
+<div class="stage" id="stage"><div class="ring" id="ring"></div></div>
+<div class="ctl"><button class="ar" id="prev" aria-label="Previous">&#8249;</button><button class="btn" id="go">Explore</button><button class="ar" id="next" aria-label="Next">&#8250;</button></div>
+<div class="dots" id="dots"></div>
+</section>
+<section id="shop">
+<h2 id="stitle"></h2>
+<p class="lead" id="ssub"></p>
 <div class="chips" id="chips"></div>
 <div class="grid" id="grid"></div>
 </section>
-<section id="cats" class="rv">
-<h2>Pick your vibe</h2>
-<p class="lead">Six ways to make your space yours.</p>
-<div class="cats" id="catbox"></div>
-</section>
 <section id="about" class="rv">
-<h2>ZELQIO by Joy Guru Fashions</h2>
-<p class="lead" style="max-width:40rem">ZELQIO is a design-led brand from Joy Guru Fashions. Every piece is printed on demand, so nothing is wasted and every order is fresh. New products appear here the moment they go live on our marketplaces.</p>
+<h2>About ZELQIO</h2>
+<p class="lead" style="max-width:40rem">ZELQIO makes bold, India-inspired designs, printed on demand, so every piece is made fresh for you and nothing is wasted.</p>
 </section>
-<footer><a class="logo" href="#top">ZELQIO</a><br>A brand of Joy Guru Fashions &middot; India<br>&copy; <span id="yr"></span> ZELQIO. All rights reserved.</footer>
+<footer>
+<a class="logo" href="#top">ZELQIO</a>
+<div class="fl"><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a><a href="refund.html">Refund &amp; Cancellation (No Returns)</a><a href="shipping.html">Shipping</a><a href="contact.html">Contact</a></div>
+<div>&copy; <span id="yr"></span> ZELQIO. All rights reserved.</div>
+<div style="margin-top:6px">ZELQIO is a brand operated by Joy Guru Fashions (proprietor: Supriya Banerjee), Garulia, West Bengal, India.</div>
+</footer>
+<div id="ov"><div class="pn" id="pn"></div></div>
+<script src="config.js"></script>
 <script>
-var CATS=[["all","All","✨"],["desk-mats","Desk Mats","🕹️"],["cushions","Cushions","🛋️"],["totes","Totes","👜"],["puzzles","Puzzles","🧩"],["phone-cases","Phone Cases","📱"],["planners","Planners","📓"]];
-var products=[],cur="all";
-function el(t,c,h){var e=document.createElement(t);if(c)e.className=c;if(h!==undefined)e.textContent=h;return e}
-function icon(k){for(var i=0;i<CATS.length;i++)if(CATS[i][0]===k)return CATS[i][2];return "✨"}
-function label(k){for(var i=0;i<CATS.length;i++)if(CATS[i][0]===k)return CATS[i][1];return k}
-var chips=document.getElementById("chips");
-CATS.forEach(function(c){var b=el("button","chip"+(c[0]==="all"?" on":""),c[2]+" "+c[1]);b.onclick=function(){cur=c[0];[].forEach.call(chips.children,function(x){x.classList.remove("on")});b.classList.add("on");render()};chips.appendChild(b)});
-var cb=document.getElementById("catbox");
-CATS.slice(1).forEach(function(c){var d=el("div","cc");d.appendChild(el("b","",c[2]));d.appendChild(el("div","",c[1]));d.onclick=function(){cur=c[0];[].forEach.call(chips.children,function(x,i){x.classList.toggle("on",CATS[i][0]===cur)});render();document.getElementById("shop").scrollIntoView()};d.style.cursor="pointer";cb.appendChild(d)});
+(function(){
+var C=window.ZCFG||{};
+var INFO={"desk-mats":["Desk Mats","🖱️","linear-gradient(150deg,#5b3df5,#b13dff)","Own your workspace"],"cushions":["Cushions","🛋️","linear-gradient(150deg,#ff3ec9,#ff8a3d)","Soften the room"],"totes":["Totes","👜","linear-gradient(150deg,#00c2ff,#3d6bff)","Carry the vibe"],"puzzles":["Puzzles","🧩","linear-gradient(150deg,#00d9a0,#0095ff)","Slow down, play"],"phone-cases":["Phone Cases","📱","linear-gradient(150deg,#ff5f6d,#ffc371)","Pocket-sized art"],"planners":["Planners","📓","linear-gradient(150deg,#7c5cff,#00c2ff)","Plan in style"]};
+var STATES=["Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chhattisgarh","Goa","Gujarat","Haryana","Himachal Pradesh","Jharkhand","Karnataka","Kerala","Madhya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Odisha","Punjab","Rajasthan","Sikkim","Tamil Nadu","Telangana","Tripura","Uttar Pradesh","Uttarakhand","West Bengal","Andaman and Nicobar Islands","Chandigarh","Dadra and Nagar Haveli and Daman and Diu","Delhi","Jammu and Kashmir","Ladakh","Lakshadweep","Puducherry"];
+var RS="₹";
+function $(i){return document.getElementById(i)}
+function esc(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;")}
+function fmt(n){return Number(n).toLocaleString("en-IN")}
+var products=[],disc=15,keys=[],by={},pos=0,auto=true,cat=null,items=[];
+function mrp(p){return Number(p.mrp||p.price)}
+function offer(p){return p.offerPrice?Number(p.offerPrice):Math.round(mrp(p)*(1-disc/100))}
+function info(k){return INFO[k]||[k.replace(/-/g," ").replace(/^./,function(c){return c.toUpperCase()}),"✨","linear-gradient(150deg,#7c5cff,#ff3ec9)","Fresh designs"]}
+function mode(){var w=innerWidth;return w>=1024?"d":(w>=641?"t":"m")}
+function wrap(d,n){return(((d+n/2)%n)+n)%n-n/2}
+var ring=$("ring");
+function build(){
+ring.textContent="";items=[];
+keys.forEach(function(k,i){var f=info(k);var el=document.createElement("div");el.className="cc";el.style.setProperty("--g",f[2]);
+el.innerHTML='<div class="em">'+f[1]+'</div><h3>'+esc(f[0])+'</h3><small>'+esc(f[3])+'</small>';
+el.onclick=function(){if(moved>6)return;var n=keys.length;var d=wrap(i-pos,n);if(Math.abs(d)<.5){pick(k)}else{auto=false;pos=pos+d;layout();upd()}};
+ring.appendChild(el);items.push(el)});
+var dt=$("dots");dt.textContent="";keys.forEach(function(){dt.appendChild(document.createElement("i"))});
+layout();upd()}
+function layout(){
+var m=mode(),n=keys.length;if(!n)return;
+var R=Math.max(320,(250/2)/Math.tan(Math.PI/Math.max(n,3))+110);
+items.forEach(function(el,i){
+var d=wrap(i-pos,n),tf,op=1,z=100;
+if(m==="d"){var a=(i-pos)*360/n;tf="rotateY("+a+"deg) translateZ("+R+"px)";z=Math.round(100-Math.abs(d)*10)}
+else{var ad=Math.abs(d);tf="translateX("+(d*(m==="m"?56:50))+"%) translateZ("+(-ad*150)+"px) rotateY("+(-d*30)+"deg)";op=ad>2.2?0:1-ad*.28;z=Math.round(100-ad*10)}
+el.style.transform=tf;el.style.opacity=op;el.style.zIndex=z;el.style.pointerEvents=op<.2?"none":"auto";
+el.classList.toggle("front",Math.abs(d)<.5)})}
+function cidx(){var n=keys.length;return(((Math.round(pos))%n)+n)%n}
+function upd(){var k=keys[cidx()];if(!k)return;$("go").textContent="Explore "+info(k)[0]+" →";
+[].forEach.call($("dots").children,function(d,i){d.classList.toggle("on",i===cidx())})}
+function step(d){auto=false;pos=Math.round(pos)+d;layout();upd()}
+$("prev").onclick=function(){step(-1)};$("next").onclick=function(){step(1)};
+$("go").onclick=function(){pick(keys[cidx()])};
+var st=$("stage"),x0=null,p0=0,moved=0;
+st.addEventListener("pointerdown",function(e){x0=e.clientX;p0=pos;moved=0;auto=false;ring.classList.add("drag")});
+addEventListener("pointermove",function(e){if(x0===null)return;var dx=e.clientX-x0;moved=Math.max(moved,Math.abs(dx));pos=p0-dx/(mode()==="d"?170:120);layout()});
+addEventListener("pointerup",function(){if(x0===null)return;x0=null;ring.classList.remove("drag");pos=Math.round(pos);layout();upd();setTimeout(function(){moved=0},50)});
+addEventListener("keydown",function(e){if($("ov").classList.contains("on")){if(e.key==="Escape")closeP();return}if(e.key==="ArrowLeft")step(-1);if(e.key==="ArrowRight")step(1)});
+addEventListener("resize",layout);
+var reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+setInterval(function(){if(auto&&!document.hidden&&!reduce&&keys.length){pos+=1;layout();upd()}},3800);
+function pick(k){
+cat=k;var f=info(k);var list=by[k]||[];
+$("stitle").textContent=f[0];$("ssub").textContent=list.length+(list.length===1?" design":" designs")+" · "+f[3];
+var ch=$("chips");ch.textContent="";keys.forEach(function(x){var b=document.createElement("button");b.className="chip"+(x===k?" on":"");b.textContent=info(x)[1]+" "+info(x)[0];b.onclick=function(){pick(x)};ch.appendChild(b)});
+var g=$("grid");g.textContent="";
+list.forEach(function(p,i){var b=document.createElement("button");b.className="pc";b.style.animationDelay=(i*60)+"ms";
+var o=offer(p),m=mrp(p),off=Math.round((1-o/m)*100);
+b.innerHTML='<div class="im"><img loading="lazy" src="'+esc(p.image)+'" alt=""></div><div class="in"><div class="nm">'+esc(p.name)+'</div><div class="pr"><span class="of">'+RS+fmt(o)+'</span>'+(off>0?'<s>'+RS+fmt(m)+'</s><em>'+off+'% off</em>':'')+'</div></div>';
+b.querySelector("img").alt=p.name||"ZELQIO product";
+b.onclick=function(){openP(p)};g.appendChild(b)});
+$("shop").classList.add("on");setTimeout(function(){$("shop").scrollIntoView({behavior:"smooth"})},60)}
+var cp=null,qty=1,idt=null,gu=null,view="p",gi=0;
+function openP(p){cp=p;qty=1;view="p";gi=0;$("ov").classList.add("on");document.body.style.overflow="hidden";render()}
+function closeP(){$("ov").classList.remove("on");document.body.style.overflow=""}
+$("ov").addEventListener("click",function(e){if(e.target===$("ov"))closeP()});
+function imgs(p){var a=[p.image].concat(p.images||[]).filter(Boolean);return a.filter(function(v,i){return a.indexOf(v)===i})}
 function render(){
-var g=document.getElementById("grid");g.textContent="";
-var list=products.filter(function(p){return cur==="all"||p.category===cur});
-if(!list.length){
-var n=cur==="all"?CATS.slice(1):CATS.filter(function(c){return c[0]===cur});
-n.forEach(function(c,i){var d=el("div","card soon");d.style.animationDelay=(i*80)+"ms";var im=el("div","img",c[2]);d.appendChild(im);var inf=el("div","info");inf.appendChild(el("div","cat",c[1]));inf.appendChild(el("div","nm","Dropping soon"));var pr=el("div","pr");pr.appendChild(el("span","","Stay tuned"));inf.appendChild(pr);d.appendChild(inf);g.appendChild(d)});
-return}
-list.forEach(function(p,i){
-var a=el("a","card");a.style.animationDelay=(i*70)+"ms";
-if(p.amazonUrl){a.href=p.amazonUrl;a.target="_blank";a.rel="noopener"}
-var im=el("div","img");
-if(p.image){var x=document.createElement("img");x.src=p.image;x.alt=p.name||"ZELQIO product";x.loading="lazy";im.appendChild(x)}else{im.textContent=icon(p.category)}
-a.appendChild(im);
-var inf=el("div","info");inf.appendChild(el("div","cat",label(p.category)));inf.appendChild(el("div","nm",p.name||"ZELQIO product"));
-var pr=el("div","pr");pr.appendChild(el("span","",p.price?("Rs. "+p.price):""));pr.appendChild(el("span","go",p.amazonUrl?"Buy on Amazon →":""));
-inf.appendChild(pr);a.appendChild(inf);g.appendChild(a)})}
-fetch("products.json?v="+Date.now()).then(function(r){return r.json()}).then(function(j){products=j.products||[]}).catch(function(){products=[]}).then(render);
-var words=["desk","sofa","phone","tote","mood","everyday"],wi=0,r=document.getElementById("rot");
-setInterval(function(){r.style.opacity=0;r.style.transform="translateY(8px)";setTimeout(function(){wi=(wi+1)%words.length;r.textContent=words[wi];r.style.opacity=1;r.style.transform="none"},300)},2200);
-var m="";for(var k=0;k<2;k++)m+="DESK MATS • CUSHIONS • TOTES • PUZZLES • PHONE CASES • PLANNERS • MADE TO ORDER • DESIGNED IN INDIA • ";
-document.getElementById("mq").textContent=m+m;
-document.getElementById("yr").textContent=new Date().getFullYear();
-var gl=document.getElementById("glow");
-addEventListener("pointermove",function(e){gl.style.left=e.clientX+"px";gl.style.top=e.clientY+"px"});
+var p=cp,o=offer(p),m=mrp(p),off=Math.round((1-o/m)*100),a=imgs(p);
+var h='<button class="x" id="cx" aria-label="Close">✕</button><div class="gal"><img class="mi" id="mi" src="'+esc(a[gi]||a[0])+'" alt="'+esc(p.name)+'">';
+if(a.length>1){h+='<div class="th">';a.forEach(function(u,i){h+='<img data-i="'+i+'" class="'+(i===gi?"on":"")+'" src="'+esc(u)+'" alt="">'});h+='</div>'}
+h+='</div><div class="det">';
+if(view==="p"){
+h+='<h2>'+esc(p.name)+'</h2><div class="big"><span class="of">'+RS+fmt(o*qty)+'</span>'+(off>0?'<s style="color:var(--mut)">'+RS+fmt(m*qty)+'</s><em style="font-style:normal;color:#3dffb0;font-weight:700">'+off+'% off</em>':'')+'</div>';
+if(p.description)h+='<p>'+esc(p.description)+'</p>';
+h+='<div class="qty"><button id="qm">&minus;</button><b id="qv">'+qty+'</b><button id="qp">+</button></div>';
+h+='<button class="btn" id="buy">Buy now</button>';
+if(p.amazonUrl)h+='<a class="btn ghost" style="text-align:center" target="_blank" rel="noopener" href="'+esc(p.amazonUrl)+'">Also on Amazon</a>';
+h+='<div class="note">Made to order and printed for you. No returns or exchanges (damaged or wrong items are covered, see <a href="refund.html" style="color:var(--b)">policy</a>).</div>'}
+else if(view==="c"){h+=checkoutHtml()}
+else{h+='<h2>Order confirmed</h2><p>Thank you! Your payment was received. Order ID: <b>'+esc(window.__oid||"")+'</b>. A receipt and confirmation will be emailed to you shortly.</p><button class="btn" id="done">Continue shopping</button>'}
+h+='</div>';$("pn").innerHTML=h;
+$("cx").onclick=closeP;
+var mi=$("mi");[].forEach.call($("pn").querySelectorAll(".th img"),function(t){t.onclick=function(){gi=+t.getAttribute("data-i");mi.src=a[gi];[].forEach.call($("pn").querySelectorAll(".th img"),function(x){x.classList.remove("on")});t.classList.add("on")}});
+if(view==="p"){$("qm").onclick=function(){qty=Math.max(1,qty-1);render()};$("qp").onclick=function(){qty=Math.min(10,qty+1);render()};$("buy").onclick=function(){view="c";render()}}
+else if(view==="c"){wireCheckout()}
+else{$("done").onclick=closeP}}
+function ready(){return C.googleClientId&&C.backendUrl}
+function checkoutHtml(){
+var p=cp,tot=offer(p)*qty;
+var h='<h2>Checkout</h2><p>'+esc(p.name)+' &times; '+qty+' = <b style="color:var(--fg)">'+RS+fmt(tot)+'</b></p>';
+if(!ready()){h+='<div class="note">Online checkout is opening very soon. Thank you for your patience.</div>';if(p.amazonUrl)h+='<a class="btn" style="text-align:center" target="_blank" rel="noopener" href="'+esc(p.amazonUrl)+'">Buy on Amazon meanwhile</a>';h+='<button class="btn ghost" id="bk">Back</button>';return h}
+h+='<div id="gs"></div><div class="fm" id="fm" style="display:none"><div class="who" id="who"></div><input id="fn" placeholder="Full name" autocomplete="name"><input id="fp" placeholder="Mobile number (10 digits)" inputmode="numeric" maxlength="10" autocomplete="tel"><input id="fa" placeholder="Address (house, street, area)" autocomplete="street-address"><div class="r2"><input id="fc" placeholder="City" autocomplete="address-level2"><input id="fz" placeholder="PIN code" inputmode="numeric" maxlength="6" autocomplete="postal-code"></div><select id="fs"><option value="">State</option>';
+STATES.forEach(function(s){h+='<option>'+esc(s)+'</option>'});
+h+='</select><label class="ck"><input type="checkbox" id="fk"><span>I agree to the <a href="terms.html" target="_blank">Terms</a> and the <a href="refund.html" target="_blank">Refund &amp; Cancellation policy</a> (no returns).</span></label><div class="err" id="fe"></div><button class="btn" id="pay">Pay '+RS+fmt(tot)+' securely</button><div class="note">Secure payment by Razorpay: UPI, cards, netbanking, wallets.</div></div><button class="btn ghost" id="bk">Back</button>';
+return h}
+function loadJs(src){return new Promise(function(res,rej){var s=document.createElement("script");s.src=src;s.async=true;s.onload=res;s.onerror=rej;document.head.appendChild(s)})}
+function jwt(t){try{var b=t.split(".")[1].replace(/-/g,"+").replace(/_/g,"/");return JSON.parse(decodeURIComponent(escape(atob(b))))}catch(e){return null}}
+function showForm(){var f=$("fm");if(!f)return;f.style.display="grid";$("gs").style.display="none";$("who").textContent="Signed in as "+(gu.email||"");if(gu.name&&!$("fn").value)$("fn").value=gu.name}
+function wireCheckout(){
+$("bk").onclick=function(){view="p";render()};
+if(!ready())return;
+if(idt&&gu){showForm()}else{
+loadJs("https://accounts.google.com/gsi/client").then(function(){
+google.accounts.id.initialize({client_id:C.googleClientId,callback:function(r){idt=r.credential;gu=jwt(idt);if(gu)showForm()}});
+google.accounts.id.renderButton($("gs"),{theme:"filled_black",size:"large",shape:"pill",text:"continue_with"})
+}).catch(function(){$("gs").textContent="Could not load Google sign-in. Please check your connection."})}
+var pay=$("pay");if(pay)pay.onclick=doPay}
+function post(o){return fetch(C.backendUrl,{method:"POST",body:JSON.stringify(o)}).then(function(r){return r.json()})}
+function doPay(){
+var e=$("fe");e.textContent="";
+var c={name:$("fn").value.trim(),phone:$("fp").value.trim(),address:$("fa").value.trim(),city:$("fc").value.trim(),pin:$("fz").value.trim(),state:$("fs").value};
+if(c.name.length<2)return e.textContent="Please enter your full name.";
+if(!/^[6-9][0-9]{9}$/.test(c.phone))return e.textContent="Enter a valid 10-digit mobile number.";
+if(c.address.length<6)return e.textContent="Please enter your full address.";
+if(c.city.length<2)return e.textContent="Please enter your city.";
+if(!/^[0-9]{6}$/.test(c.pin))return e.textContent="Enter a valid 6-digit PIN code.";
+if(!c.state)return e.textContent="Please choose your state.";
+if(!$("fk").checked)return e.textContent="Please accept the terms to continue.";
+var b=$("pay");b.disabled=true;b.textContent="Starting payment...";
+post({action:"createOrder",idToken:idt,productId:cp.id,qty:qty,customer:c}).then(function(r){
+if(!r.ok)throw new Error(r.error||"Could not start payment");
+return loadJs("https://checkout.razorpay.com/v1/checkout.js").then(function(){
+var rz=new Razorpay({key:r.keyId,order_id:r.orderId,amount:r.amount,currency:"INR",name:"ZELQIO",description:cp.name,prefill:{name:c.name,email:gu.email,contact:c.phone},theme:{color:"#7c5cff"},
+handler:function(resp){b.textContent="Confirming payment...";
+post({action:"verify",idToken:idt,razorpay_order_id:resp.razorpay_order_id,razorpay_payment_id:resp.razorpay_payment_id,razorpay_signature:resp.razorpay_signature}).then(function(v){
+if(!v.ok)throw new Error(v.error||"Verification failed");window.__oid=resp.razorpay_order_id;view="s";render()}).catch(function(x){e.textContent="Payment received but confirmation is pending: "+x.message+" Keep your payment ID "+resp.razorpay_payment_id+" and contact us."})},
+modal:{ondismiss:function(){b.disabled=false;b.textContent="Pay now"}}});
+rz.open()})}).catch(function(x){e.textContent=x.message||"Something went wrong. Please try again.";b.disabled=false;b.textContent="Try again"})}
+fetch("products.json?v="+Date.now()).then(function(r){return r.json()}).then(function(j){
+products=(j.products||[]).filter(function(p){return p&&p.id&&p.price});
+if(typeof j.discountPercent==="number")disc=j.discountPercent;
+products.forEach(function(p){(by[p.category]=by[p.category]||[]).push(p)});
+var order=Object.keys(INFO);keys=Object.keys(by).sort(function(a,b){var x=order.indexOf(a),y=order.indexOf(b);return(x<0?99:x)-(y<0?99:y)});
+if(!keys.length){$("picker").style.display="none"}else build()}).catch(function(){$("plead").textContent="Our collection is loading. Please refresh in a moment."});
+var words=["desk","sofa","table","tote","mood","everyday"],wi=0,r=$("rot");
+setInterval(function(){if(reduce)return;r.style.opacity=0;r.style.transform="translateY(8px)";setTimeout(function(){wi=(wi+1)%words.length;r.textContent=words[wi];r.style.opacity=1;r.style.transform="none"},300)},2200);
+$("yr").textContent=new Date().getFullYear();
+var gl=$("glow");addEventListener("pointermove",function(e){gl.style.left=e.clientX+"px";gl.style.top=e.clientY+"px"});
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add("in")})},{threshold:.1});
 [].forEach.call(document.querySelectorAll(".rv"),function(e){io.observe(e)});
+})();
 </script>
 </body>
 </html>
