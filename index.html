@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>ZELQIO by Joy Guru Fashions</title>
+<meta name="description" content="ZELQIO - bold, made-to-order designs for your desk, sofa, phone and everyday carry. By Joy Guru Fashions, India.">
+<meta name="theme-color" content="#07070d">
+<style>
+:root{--bg:#07070d;--fg:#f4f4fb;--mut:#9a9ab5;--a:#7c5cff;--b:#00e5ff;--c:#ff3ec9;--card:rgba(255,255,255,.05);--bd:rgba(255,255,255,.1)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;overflow-x:hidden;line-height:1.5}
+.orb{position:fixed;border-radius:50%;filter:blur(90px);opacity:.45;z-index:-1;animation:float 18s ease-in-out infinite}
+.o1{width:50vmax;height:50vmax;background:var(--a);top:-15vmax;left:-10vmax}
+.o2{width:40vmax;height:40vmax;background:var(--c);bottom:-12vmax;right:-8vmax;animation-delay:-6s}
+.o3{width:30vmax;height:30vmax;background:var(--b);top:40%;left:45%;opacity:.25;animation-delay:-11s}
+@keyframes float{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(6vmax,4vmax) scale(1.15)}}
+#glow{position:fixed;width:360px;height:360px;border-radius:50%;pointer-events:none;background:radial-gradient(circle,rgba(124,92,255,.22),transparent 65%);transform:translate(-50%,-50%);z-index:-1;left:50%;top:30%}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:14px 5vw;backdrop-filter:blur(14px);background:rgba(7,7,13,.55);border-bottom:1px solid var(--bd)}
+.logo{font-weight:900;letter-spacing:.28em;font-size:1.15rem;background:linear-gradient(90deg,var(--b),var(--a),var(--c));-webkit-background-clip:text;background-clip:text;color:transparent;text-decoration:none}
+nav a.l{color:var(--mut);text-decoration:none;margin-left:22px;font-size:.9rem;transition:.2s}
+nav a.l:hover{color:var(--fg)}
+@media(max-width:560px){nav a.l{display:none}}
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:110px 6vw 60px}
+.tag{border:1px solid var(--bd);background:var(--card);padding:6px 16px;border-radius:99px;font-size:.78rem;color:var(--b);letter-spacing:.14em;text-transform:uppercase;margin-bottom:26px}
+h1{font-size:clamp(3rem,13vw,10rem);line-height:.95;font-weight:900;letter-spacing:.06em;background:linear-gradient(110deg,var(--b),var(--a) 40%,var(--c) 75%,var(--b));background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 7s linear infinite}
+@keyframes shine{to{background-position:250% 0}}
+.sub{max-width:34rem;color:var(--mut);margin:24px auto 34px;font-size:clamp(1rem,2.4vw,1.2rem)}
+.rot{color:var(--fg);font-weight:700;display:inline-block;min-width:7ch;transition:opacity .3s,transform .3s}
+.btn{display:inline-block;padding:14px 30px;border-radius:99px;background:linear-gradient(90deg,var(--a),var(--c));color:#fff;text-decoration:none;font-weight:700;box-shadow:0 0 30px rgba(124,92,255,.5);transition:.25s}
+.btn:hover{transform:translateY(-3px) scale(1.04);box-shadow:0 0 50px rgba(255,62,201,.6)}
+.mq{overflow:hidden;border-block:1px solid var(--bd);background:rgba(255,255,255,.03);padding:14px 0;white-space:nowrap}
+.mq div{display:inline-block;animation:mq 28s linear infinite;color:var(--mut);letter-spacing:.3em;font-size:.85rem;text-transform:uppercase}
+@keyframes mq{to{transform:translateX(-50%)}}
+section{padding:90px 5vw;max-width:1280px;margin:0 auto}
+h2{font-size:clamp(1.9rem,5vw,3.2rem);font-weight:800;margin-bottom:8px}
+.lead{color:var(--mut);margin-bottom:30px}
+.chips{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:34px}
+.chip{border:1px solid var(--bd);background:var(--card);color:var(--fg);padding:10px 18px;border-radius:99px;cursor:pointer;font-size:.9rem;transition:.25s;font-family:inherit}
+.chip:hover{border-color:var(--a)}
+.chip.on{background:linear-gradient(90deg,var(--a),var(--c));border-color:transparent;box-shadow:0 0 22px rgba(124,92,255,.5)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:22px}
+.card{position:relative;border:1px solid var(--bd);background:var(--card);border-radius:22px;overflow:hidden;backdrop-filter:blur(10px);transition:transform .3s,border-color .3s,opacity .4s;text-decoration:none;color:inherit;display:block;animation:pop .6s both}
+.card:hover{transform:translateY(-8px);border-color:var(--b);box-shadow:0 20px 50px rgba(0,229,255,.12)}
+@keyframes pop{from{opacity:0;transform:translateY(24px) scale(.96)}to{opacity:1;transform:none}}
+.img{aspect-ratio:1/1;background:linear-gradient(135deg,rgba(124,92,255,.35),rgba(255,62,201,.25),rgba(0,229,255,.25));background-size:200% 200%;animation:shine 8s linear infinite;display:flex;align-items:center;justify-content:center;font-size:3.4rem}
+.img img{width:100%;height:100%;object-fit:cover;display:block}
+.info{padding:16px 18px 20px}
+.cat{font-size:.7rem;letter-spacing:.18em;color:var(--b);text-transform:uppercase}
+.nm{font-weight:700;margin:4px 0 6px}
+.pr{color:var(--mut);display:flex;justify-content:space-between;align-items:center;font-size:.95rem}
+.go{color:var(--c);font-weight:700}
+.soon{opacity:.75}
+.cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.cc{border:1px solid var(--bd);background:var(--card);border-radius:20px;padding:26px;transition:.3s}
+.cc:hover{transform:translateY(-6px);border-color:var(--c)}
+.cc b{display:block;font-size:2rem;margin-bottom:8px}
+.cc span{color:var(--mut);font-size:.9rem}
+footer{border-top:1px solid var(--bd);text-align:center;padding:50px 5vw 70px;color:var(--mut);font-size:.9rem}
+footer .logo{display:inline-block;margin-bottom:10px}
+.rv{opacity:0;transform:translateY(30px);transition:opacity .8s,transform .8s}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div><div id="glow"></div>
+<nav><a class="logo" href="#top">ZELQIO</a><div><a class="l" href="#shop">Shop</a><a class="l" href="#cats">Categories</a><a class="l" href="#about">About</a></div></nav>
+<header class="hero" id="top">
+<div class="tag">Made to order &middot; Designed in India</div>
+<h1>ZELQIO</h1>
+<p class="sub">Bold designs for your <span class="rot" id="rot">desk</span>. Printed on demand, shipped across India.</p>
+<a class="btn" href="#shop">Explore the drop</a>
+</header>
+<div class="mq"><div id="mq"></div></div>
+<section id="shop" class="rv">
+<h2>The Drop</h2>
+<p class="lead">Fresh designs, straight from the studio. Tap a category.</p>
+<div class="chips" id="chips"></div>
+<div class="grid" id="grid"></div>
+</section>
+<section id="cats" class="rv">
+<h2>Pick your vibe</h2>
+<p class="lead">Six ways to make your space yours.</p>
+<div class="cats" id="catbox"></div>
+</section>
+<section id="about" class="rv">
+<h2>ZELQIO by Joy Guru Fashions</h2>
+<p class="lead" style="max-width:40rem">ZELQIO is a design-led brand from Joy Guru Fashions. Every piece is printed on demand, so nothing is wasted and every order is fresh. New products appear here the moment they go live on our marketplaces.</p>
+</section>
+<footer><a class="logo" href="#top">ZELQIO</a><br>A brand of Joy Guru Fashions &middot; India<br>&copy; <span id="yr"></span> ZELQIO. All rights reserved.</footer>
+<script>
+var CATS=[["all","All","✨"],["desk-mats","Desk Mats","🕹️"],["cushions","Cushions","🛋️"],["totes","Totes","👜"],["puzzles","Puzzles","🧩"],["phone-cases","Phone Cases","📱"],["planners","Planners","📓"]];
+var products=[],cur="all";
+function el(t,c,h){var e=document.createElement(t);if(c)e.className=c;if(h!==undefined)e.textContent=h;return e}
+function icon(k){for(var i=0;i<CATS.length;i++)if(CATS[i][0]===k)return CATS[i][2];return "✨"}
+function label(k){for(var i=0;i<CATS.length;i++)if(CATS[i][0]===k)return CATS[i][1];return k}
+var chips=document.getElementById("chips");
+CATS.forEach(function(c){var b=el("button","chip"+(c[0]==="all"?" on":""),c[2]+" "+c[1]);b.onclick=function(){cur=c[0];[].forEach.call(chips.children,function(x){x.classList.remove("on")});b.classList.add("on");render()};chips.appendChild(b)});
+var cb=document.getElementById("catbox");
+CATS.slice(1).forEach(function(c){var d=el("div","cc");d.appendChild(el("b","",c[2]));d.appendChild(el("div","",c[1]));d.onclick=function(){cur=c[0];[].forEach.call(chips.children,function(x,i){x.classList.toggle("on",CATS[i][0]===cur)});render();document.getElementById("shop").scrollIntoView()};d.style.cursor="pointer";cb.appendChild(d)});
+function render(){
+var g=document.getElementById("grid");g.textContent="";
+var list=products.filter(function(p){return cur==="all"||p.category===cur});
+if(!list.length){
+var n=cur==="all"?CATS.slice(1):CATS.filter(function(c){return c[0]===cur});
+n.forEach(function(c,i){var d=el("div","card soon");d.style.animationDelay=(i*80)+"ms";var im=el("div","img",c[2]);d.appendChild(im);var inf=el("div","info");inf.appendChild(el("div","cat",c[1]));inf.appendChild(el("div","nm","Dropping soon"));var pr=el("div","pr");pr.appendChild(el("span","","Stay tuned"));inf.appendChild(pr);d.appendChild(inf);g.appendChild(d)});
+return}
+list.forEach(function(p,i){
+var a=el("a","card");a.style.animationDelay=(i*70)+"ms";
+if(p.amazonUrl){a.href=p.amazonUrl;a.target="_blank";a.rel="noopener"}
+var im=el("div","img");
+if(p.image){var x=document.createElement("img");x.src=p.image;x.alt=p.name||"ZELQIO product";x.loading="lazy";im.appendChild(x)}else{im.textContent=icon(p.category)}
+a.appendChild(im);
+var inf=el("div","info");inf.appendChild(el("div","cat",label(p.category)));inf.appendChild(el("div","nm",p.name||"ZELQIO product"));
+var pr=el("div","pr");pr.appendChild(el("span","",p.price?("Rs. "+p.price):""));pr.appendChild(el("span","go",p.amazonUrl?"Buy on Amazon →":""));
+inf.appendChild(pr);a.appendChild(inf);g.appendChild(a)})}
+fetch("products.json?v="+Date.now()).then(function(r){return r.json()}).then(function(j){products=j.products||[]}).catch(function(){products=[]}).then(render);
+var words=["desk","sofa","phone","tote","mood","everyday"],wi=0,r=document.getElementById("rot");
+setInterval(function(){r.style.opacity=0;r.style.transform="translateY(8px)";setTimeout(function(){wi=(wi+1)%words.length;r.textContent=words[wi];r.style.opacity=1;r.style.transform="none"},300)},2200);
+var m="";for(var k=0;k<2;k++)m+="DESK MATS • CUSHIONS • TOTES • PUZZLES • PHONE CASES • PLANNERS • MADE TO ORDER • DESIGNED IN INDIA • ";
+document.getElementById("mq").textContent=m+m;
+document.getElementById("yr").textContent=new Date().getFullYear();
+var gl=document.getElementById("glow");
+addEventListener("pointermove",function(e){gl.style.left=e.clientX+"px";gl.style.top=e.clientY+"px"});
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add("in")})},{threshold:.1});
+[].forEach.call(document.querySelectorAll(".rv"),function(e){io.observe(e)});
+</script>
+</body>
+</html>
