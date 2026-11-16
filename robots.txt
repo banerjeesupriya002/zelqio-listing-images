@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /admin.html
+Disallow: /orders.html
+Disallow: /publish.html
+
+Sitemap: https://zelqio.in/sitemap.xml
