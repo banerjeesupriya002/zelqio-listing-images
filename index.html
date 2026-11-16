@@ -38,7 +38,7 @@ section{padding:80px 5vw;max-width:1280px;margin:0 auto}
 h2{font-size:clamp(1.9rem,5vw,3.2rem);font-weight:800;margin-bottom:8px}
 .lead{color:var(--mut);margin-bottom:26px}
 #picker{text-align:center;min-height:100svh;display:flex;flex-direction:column;justify-content:center}
-.stage{position:relative;height:min(60vh,520px);perspective:1500px;touch-action:pan-y;user-select:none;-webkit-user-select:none;cursor:grab;margin:10px 0 20px}
+.stage{contain:layout;position:relative;height:min(60vh,520px);perspective:1500px;touch-action:pan-y;user-select:none;-webkit-user-select:none;cursor:grab;margin:10px 0 20px}
 .ring{position:absolute;inset:0;transform-style:preserve-3d}
 .cc{position:absolute;left:50%;top:50%;width:var(--cw);height:var(--ch);margin:calc(var(--ch) / -2) 0 0 calc(var(--cw) / -2);border-radius:26px;padding:22px;display:flex;flex-direction:column;justify-content:flex-end;align-items:flex-start;text-align:left;background:var(--g);border:1px solid rgba(255,255,255,.2);transition:transform .55s cubic-bezier(.22,.9,.28,1),opacity .4s;will-change:transform,opacity;backface-visibility:hidden;overflow:hidden;cursor:pointer}
 .ring.drag .cc{transition:none}
@@ -102,10 +102,10 @@ footer a{color:var(--mut)}
 footer a:hover{color:var(--fg)}
 .rv{opacity:0;transform:translateY(30px);transition:opacity .8s,transform .8s}
 .rv.in{opacity:1;transform:none}
-:root{--cw:270px;--ch:360px}
-@media(max-width:1023px){:root{--cw:230px;--ch:320px}.grid{grid-template-columns:repeat(3,1fr)}.pn{grid-template-columns:1fr;width:min(620px,100%)}}
+:root{--cw:390px;--ch:430px}
+@media(max-width:1023px){:root{--cw:330px;--ch:410px}.grid{grid-template-columns:repeat(3,1fr)}.pn{grid-template-columns:1fr;width:min(620px,100%)}}
 @media(max-width:640px){
-:root{--cw:66vw;--ch:50vh}
+:root{--cw:min(58vw,230px);--ch:min(42vh,310px)}
 nav{top:auto;bottom:0;border-bottom:0;border-top:1px solid var(--bd);justify-content:center;padding:10px 4vw calc(10px + env(safe-area-inset-bottom))}
 nav .logo{display:none}
 nav .lk{display:flex;width:100%;justify-content:space-around}
@@ -196,10 +196,13 @@ function upd(){var k=keys[cidx()];if(!k)return;$("go").textContent="Explore "+in
 function step(d){auto=false;pos=Math.round(pos)+d;layout();upd()}
 $("prev").onclick=function(){step(-1)};$("next").onclick=function(){step(1)};
 $("go").onclick=function(){pick(keys[cidx()])};
-var st=$("stage"),x0=null,p0=0,moved=0;
-st.addEventListener("pointerdown",function(e){x0=e.clientX;p0=pos;moved=0;auto=false;ring.classList.add("drag")});
-addEventListener("pointermove",function(e){if(x0===null)return;var dx=e.clientX-x0;moved=Math.max(moved,Math.abs(dx));pos=p0-dx/(mode()==="d"?170:120);layout()});
-addEventListener("pointerup",function(){if(x0===null)return;x0=null;ring.classList.remove("drag");pos=Math.round(pos);layout();upd();setTimeout(function(){moved=0},50)});
+var st=$("stage"),x0=null,p0=0,moved=0,lx=0,lt=0,vel=0,raf=0;
+function sched(){if(!raf)raf=requestAnimationFrame(function(){raf=0;layout()})}
+function perCard(){var m=mode();return m==="d"?210:(m==="t"?180:130)}
+st.addEventListener("pointerdown",function(e){if(e.pointerType==="mouse"&&e.button!==0)return;x0=e.clientX;p0=pos;moved=0;auto=false;lx=e.clientX;lt=performance.now();vel=0;ring.classList.add("drag")});
+addEventListener("pointermove",function(e){if(x0===null)return;var dx=e.clientX-x0;moved=Math.max(moved,Math.abs(dx));var n=performance.now(),dt=n-lt;if(dt>0)vel=.75*vel+.25*((e.clientX-lx)/dt);lx=e.clientX;lt=n;pos=p0-dx/perCard();sched()});
+function endDrag(){if(x0===null)return;x0=null;ring.classList.remove("drag");var fl=Math.max(-2,Math.min(2,-vel*240/perCard()));pos=Math.round(pos+fl);layout();upd();setTimeout(function(){moved=0},50)}
+addEventListener("pointerup",endDrag);addEventListener("pointercancel",endDrag);
 addEventListener("keydown",function(e){if($("ov").classList.contains("on")){if(e.key==="Escape")closeP();return}if(e.key==="ArrowLeft")step(-1);if(e.key==="ArrowRight")step(1)});
 addEventListener("resize",layout);
 var reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
