@@ -102,7 +102,7 @@ footer a{color:var(--mut)}
 footer a:hover{color:var(--fg)}
 .rv{opacity:0;transform:translateY(30px);transition:opacity .8s,transform .8s}
 .rv.in{opacity:1;transform:none}
-:root{--cw:250px;--ch:340px}
+:root{--cw:270px;--ch:360px}
 @media(max-width:1023px){:root{--cw:230px;--ch:320px}.grid{grid-template-columns:repeat(3,1fr)}.pn{grid-template-columns:1fr;width:min(620px,100%)}}
 @media(max-width:640px){
 :root{--cw:66vw;--ch:50vh}
@@ -187,8 +187,7 @@ var m=mode(),n=keys.length;if(!n)return;
 var R=Math.max(320,(250/2)/Math.tan(Math.PI/Math.max(n,3))+110);
 items.forEach(function(el,i){
 var d=wrap(i-pos,n),tf,op=1,z=100;
-if(m==="d"){var a=(i-pos)*360/n;tf="rotateY("+a+"deg) translateZ("+R+"px)";z=Math.round(100-Math.abs(d)*10)}
-else{var ad=Math.abs(d);tf="translateX("+(d*(m==="m"?56:50))+"%) translateZ("+(-ad*150)+"px) rotateY("+(-d*30)+"deg)";op=ad>2.2?0:1-ad*.28;z=Math.round(100-ad*10)}
+var ad=Math.abs(d),kx=m==="d"?66:(m==="m"?56:50),kr=m==="d"?40:30,kz=m==="d"?180:150;tf="translateX("+(d*kx)+"%) translateZ("+(-ad*kz)+"px) rotateY("+(-d*kr)+"deg)";op=ad>2.4?0:1-ad*(m==="d"?.2:.28);z=Math.round(100-ad*10)
 el.style.transform=tf;el.style.opacity=op;el.style.zIndex=z;el.style.pointerEvents=op<.2?"none":"auto";
 el.classList.toggle("front",Math.abs(d)<.5)})}
 function cidx(){var n=keys.length;return(((Math.round(pos))%n)+n)%n}
