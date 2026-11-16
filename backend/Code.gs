@@ -15,6 +15,8 @@ function doPost(e){
   var b=JSON.parse(e.postData.contents);
   if(b.action==='createOrder')return out(createOrder(b));
   if(b.action==='verify')return out(verify(b));
+  if(b.action==='adminList')return out(adminList(b));
+  if(b.action==='adminUpdate')return out(adminUpdate(b));
   return out({ok:false,error:'Unknown request'});
  }catch(err){return out({ok:false,error:String(err.message||err)})}
 }
@@ -62,4 +64,32 @@ function verify(b){
  MailApp.sendEmail({to:u.email,subject:'ZELQIO order confirmed - '+b.razorpay_order_id,htmlBody:body});
  MailApp.sendEmail({to:Session.getEffectiveUser().getEmail(),subject:'New ZELQIO order '+b.razorpay_order_id,htmlBody:body+'<p>Customer: '+r[4]+' / '+r[5]+' / '+u.email+'</p>'});
  return {ok:true};
+}
+
+/* ---- Owner admin (orders & fulfilment). Needs script property OWNER_EMAIL (your Google email, not a secret). ---- */
+function isOwner(idToken){
+ var j=who(idToken);var o=String(prop('OWNER_EMAIL')||'').toLowerCase();
+ if(!o||String(j.email).toLowerCase()!==o)throw new Error('This account is not allowed.');
+ return j;
+}
+function adminList(b){
+ isOwner(b.idToken);var s=sheet();
+ if(s.getRange(1,16).getValue()!=='Fulfilment')s.getRange(1,16,1,3).setValues([['Fulfilment','Tracking','Notes']]);
+ var v=s.getDataRange().getValues();var rows=[];
+ for(var i=1;i<v.length;i++){var r=v[i];
+  rows.push({row:i+1,time:String(r[0]),order:r[1],status:r[2],email:r[3],name:r[4],phone:r[5],address:r[6],city:r[7],state:r[8],pin:r[9],product:r[11],qty:r[12],amount:r[13],payment:r[14],fulfil:r[15]||'New',tracking:r[16]||'',note:r[17]||''});}
+ rows.reverse();return{ok:true,orders:rows};
+}
+function adminUpdate(b){
+ isOwner(b.idToken);var s=sheet();var row=Number(b.row);
+ if(!(row>=2&&row<=s.getLastRow()))throw new Error('Order not found');
+ var ok=['New','Printing','Shipped','Delivered','Cancelled'];
+ if(ok.indexOf(b.fulfil)<0)throw new Error('Bad status');
+ var old=s.getRange(row,16).getValue();
+ s.getRange(row,16,1,3).setValues([[b.fulfil,String(b.tracking||'').slice(0,120),String(b.note||'').slice(0,300)]]);
+ if(b.fulfil==='Shipped'&&old!=='Shipped'){
+  var email=s.getRange(row,4).getValue();
+  if(email)MailApp.sendEmail(email,'Your ZELQIO order has shipped','Hi '+s.getRange(row,5).getValue()+', your order '+s.getRange(row,2).getValue()+' has shipped. Tracking: '+(b.tracking||'will follow')+'. Thank you for shopping at ZELQIO (zelqio.in).');
+ }
+ return{ok:true};
 }
