@@ -1,4 +1,6 @@
 {
+ "discountPercent": 15,
+ "updated": "2026-11-17",
  "products": [
   {
    "id": "2027-family-budget-savings-planner-a5",
@@ -80,7 +82,7 @@
   {
    "id": "alpana-festive-dining-set-table-runner-4-placemats",
    "name": "Alpana Festive Dining Set – Table Runner + 4 Placemats",
-   "category": "cushions",
+   "category": "dining",
    "price": 949,
    "image": "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/alpana-festive-dining-set-table-runner-4-placemats/main-white.jpg",
    "images": [
@@ -96,7 +98,6 @@
    "description": "Set a table that feels like a celebration.",
    "tags": [
     "alpana",
-    "cushions",
     "dining",
     "festive",
     "placemats",
@@ -271,7 +272,7 @@
   {
    "id": "kolam-festive-dining-set-table-runner-4-placemats",
    "name": "Kolam Festive Dining Set – Table Runner + 4 Placemats",
-   "category": "cushions",
+   "category": "dining",
    "price": 949,
    "image": "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/kolam-festive-dining-set-table-runner-4-placemats/main-white.jpg",
    "images": [
@@ -286,7 +287,6 @@
    "amazonUrl": "",
    "description": "Bring the joy of a freshly drawn kolam to your dining table.",
    "tags": [
-    "cushions",
     "dining",
     "festive",
     "kolam",
@@ -360,14 +360,14 @@
    "name": "\"Could Have Been an Email\" Office Humour Tote",
    "category": "totes",
    "price": 899,
-   "image": "could-have-been-an-email-office-humour-tote/1.jpg",
+   "image": "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/could-have-been-an-email-office-humour-tote/main-white.jpg",
    "images": [
-    "could-have-been-an-email-office-humour-tote/2.jpg",
-    "could-have-been-an-email-office-humour-tote/3.jpg",
-    "could-have-been-an-email-office-humour-tote/4.jpg",
-    "could-have-been-an-email-office-humour-tote/5.jpg",
-    "could-have-been-an-email-office-humour-tote/6.jpg",
-    "could-have-been-an-email-office-humour-tote/7.jpg"
+    "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/could-have-been-an-email-office-humour-tote/the-design.jpg",
+    "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/could-have-been-an-email-office-humour-tote/lifestyle-office.jpg",
+    "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/could-have-been-an-email-office-humour-tote/closeup-print.jpg",
+    "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/could-have-been-an-email-office-humour-tote/size-guide.jpg",
+    "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/could-have-been-an-email-office-humour-tote/benefits.jpg",
+    "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/could-have-been-an-email-office-humour-tote/gift-idea.jpg"
    ],
    "description": "Some meetings could simply have been an email - and this tote says it for you.",
    "tags": [
@@ -448,7 +448,7 @@
   {
    "id": "times-tables-kids-sipper-bottle-750-ml",
    "name": "Times-Tables Kids Sipper Bottle (750 ml)",
-   "category": "desk-mats",
+   "category": "bottles",
    "price": 649,
    "image": "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/times-tables-kids-sipper-bottle-750-ml/main-white.jpg",
    "images": [
@@ -464,7 +464,7 @@
    "description": "Make times tables part of every day.",
    "tags": [
     "bottle",
-    "desk-mats",
+    "bottles",
     "kids",
     "sipper",
     "tables",
@@ -506,7 +506,7 @@
   {
    "id": "sankranti-pongal-kolam-greeting-cards-pack-of-10",
    "name": "Sankranti & Pongal Kolam Greeting Cards – Pack of 10",
-   "category": "planners",
+   "category": "cards",
    "price": 499,
    "image": "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/sankranti-pongal-kolam-greeting-cards-pack-of-10/main-white.jpg",
    "images": [
@@ -525,7 +525,6 @@
     "greeting",
     "kolam",
     "pack",
-    "planners",
     "pongal",
     "sankranti"
    ],
@@ -558,36 +557,6 @@
     "system"
    ],
    "updated": "2026-11-16"
-  },
-  {
-   "id": "hindi-barakhadi-matra-study-desk-mat-for-kids-80-33-cm",
-   "name": "Hindi Barakhadi & Matra Study Desk Mat for Kids (80×33 cm)",
-   "category": "desk-mats",
-   "price": 999,
-   "image": "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/hindi-barakhadi-matra-study-desk-mat-for-kids-80-33-cm/01-main-white.jpg",
-   "images": [
-    "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/hindi-barakhadi-matra-study-desk-mat-for-kids-80-33-cm/02-lifestyle-desk.jpg",
-    "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/hindi-barakhadi-matra-study-desk-mat-for-kids-80-33-cm/03-lifestyle-angle.jpg",
-    "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/hindi-barakhadi-matra-study-desk-mat-for-kids-80-33-cm/04-closeup-print.jpg",
-    "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/hindi-barakhadi-matra-study-desk-mat-for-kids-80-33-cm/05-whats-on-the-mat.jpg",
-    "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/hindi-barakhadi-matra-study-desk-mat-for-kids-80-33-cm/06-size-guide.jpg",
-    "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/hindi-barakhadi-matra-study-desk-mat-for-kids-80-33-cm/07-benefits.jpg"
-   ],
-   "description": "Keep the Hindi barakhadi in front of your child every time they sit down to study.",
-   "tags": [
-    "barakhadi",
-    "desk",
-    "desk-mats",
-    "full-barakhadi-on-one-mat",
-    "hindi",
-    "kids",
-    "mat",
-    "matra",
-    "study"
-   ],
-   "offerPrice": 849,
-   "mrp": 999
   }
- ],
- "updated": "2026-11-17"
+ ]
 }
