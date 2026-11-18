@@ -74,7 +74,7 @@ h2{font-size:clamp(1.9rem,5vw,3.2rem);font-weight:800;margin-bottom:8px}
 .pc{border:1px solid var(--bd);background:var(--card);border-radius:22px;overflow:hidden;text-align:left;cursor:pointer;display:block;width:100%;transition:transform .3s,border-color .3s;animation:pop .6s both}
 .pc:hover{transform:translateY(-8px);border-color:var(--b);box-shadow:0 20px 50px rgba(0,229,255,.12)}
 .pc .im{aspect-ratio:1/1;background:#fff}
-.pc img{width:100%;height:100%;object-fit:cover;display:block}
+.pc img{width:100%;height:100%;object-fit:cover;display:block}.pc img,.gal img{color:transparent}.noimg{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;width:100%;height:100%;aspect-ratio:1/1;padding:18px;background:#f1f1f6;color:#2a2a3a;text-align:center;overflow:hidden}.noimg span{font-weight:700;font-size:.95rem;line-height:1.3;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;overflow-wrap:anywhere}.noimg small{font-size:.75rem;color:#7a7a90}
 .in{padding:14px 16px 18px}
 .nm{font-weight:700;margin-bottom:6px;font-size:.98rem}
 .pr{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
@@ -189,11 +189,11 @@ function info(k){return [ZC.label(k)].concat(INFO[k]||["✨","linear-gradient(15
 function mode(){var w=innerWidth;return w>=1024?"d":(w>=641?"t":"m")}
 function wrap(d,n){return(((d+n/2)%n)+n)%n-n/2}
 var ring=$("ring");
-function thumb(u,cb){var i=new Image();i.crossOrigin="anonymous";i.onload=function(){try{var w=520,h=Math.round(i.naturalHeight*w/i.naturalWidth),c=document.createElement("canvas");c.width=w;c.height=h;c.getContext("2d").drawImage(i,0,0,w,h);c.toBlob(function(b){cb(b?URL.createObjectURL(b):u)},"image/jpeg",.82)}catch(e){cb(u)}};i.onerror=function(){cb(u)};i.src=u}
+function thumb(list,cb,fail){list=good(list);if(!list.length)return fail();var u=list[0],i=new Image();i.crossOrigin="anonymous";i.onload=function(){try{var w=520,h=Math.round(i.naturalHeight*w/i.naturalWidth),c=document.createElement("canvas");c.width=w;c.height=h;c.getContext("2d").drawImage(i,0,0,w,h);c.toBlob(function(b){cb(b?URL.createObjectURL(b):u)},"image/jpeg",.82)}catch(e){cb(u)}};i.onerror=function(){BAD[u]=1;thumb(list.slice(1),cb,fail)};i.src=u}
 function build(){
 ring.textContent="";items=[];
 keys.forEach(function(k,i){var f=info(k);var el=document.createElement("div");el.className="cc";el.style.setProperty("--g",f[2]);
-var pp=(by[k]||[])[0],im=pp&&((pp.images&&pp.images[0])||pp.image);el.innerHTML=(im?'<div class="ph"></div><div class="shade"></div>':'<div class="em">'+f[1]+'</div>')+'<h3>'+esc(f[0])+'</h3><small>'+esc(f[3])+'</small>';if(im){var ph=el.querySelector(".ph");thumb(im,function(s){ph.style.backgroundImage="url("+s+")"})}
+var all=[].concat.apply([],(by[k]||[]).map(imgs)),im=good(all).length;el.innerHTML=(im?'<div class="ph"></div><div class="shade"></div>':'<div class="em">'+f[1]+'</div>')+'<h3>'+esc(f[0])+'</h3><small>'+esc(f[3])+'</small>';if(im){var ph=el.querySelector(".ph");thumb(all,function(s){ph.style.backgroundImage="url("+s+")"},function(){var e=document.createElement("div");e.className="em";e.textContent=f[1];ph.nextSibling.remove();ph.replaceWith(e)})}
 el.onclick=function(){if(moved>6)return;var n=keys.length;var d=wrap(i-pos,n);if(Math.abs(d)<.5){pick(k)}else{auto=false;pos=pos+d;layout();upd()}};
 ring.appendChild(el);items.push(el)});
 var dt=$("dots");dt.textContent="";keys.forEach(function(){dt.appendChild(document.createElement("i"))});
@@ -232,8 +232,8 @@ var ch=$("chips");ch.textContent="";keys.forEach(function(x){var b=document.crea
 var g=$("grid");g.textContent="";
 list.forEach(function(p,i){var b=document.createElement("button");b.className="pc";b.style.animationDelay=(i*60)+"ms";
 var o=offer(p),m=mrp(p),off=Math.round((1-o/m)*100);
-b.innerHTML='<div class="im"><img loading="lazy" src="'+esc(p.image)+'" alt=""></div><div class="in"><div class="nm">'+esc(p.name)+'</div><div class="pr"><span class="of">'+RS+fmt(o)+'</span>'+(off>0?'<s>'+RS+fmt(m)+'</s><em>'+off+'% off</em>':'')+'</div></div>';
-b.querySelector("img").alt=p.name||"ZELQIO product";
+b.innerHTML='<div class="im"><img loading="lazy" decoding="async" width="600" height="600" alt=""></div><div class="in"><div class="nm">'+esc(p.name)+'</div><div class="pr"><span class="of">'+RS+fmt(o)+'</span>'+(off>0?'<s>'+RS+fmt(m)+'</s><em>'+off+'% off</em>':'')+'</div></div>';
+var ci=b.querySelector("img");ci.alt=p.name||"ZELQIO product";photo(ci,imgs(p),p.name);
 b.onclick=function(){openP(p)};g.appendChild(b)});
 $("shop").classList.add("on");setTimeout(function(){$("shop").scrollIntoView({behavior:"smooth"})},60)}
 var cp=null,qty=1,idt=null,gu=null,view="p",gi=0;
@@ -241,14 +241,21 @@ function openP(p){cp=p;qty=1;view="p";gi=0;$("ov").classList.add("on");document.
 function closeP(){$("ov").classList.remove("on");document.body.style.overflow=""}
 $("ov").addEventListener("click",function(e){if(e.target===$("ov"))closeP()});
 function imgs(p){var a=[p.image].concat(p.images||[]).filter(Boolean);return a.filter(function(v,i){return a.indexOf(v)===i})}
+/* Product photos: if one fails to load, try the next photo of the same product; if none load, show a clean tile with the product name. */
+var BAD={};
+function good(a){return a.filter(function(u){return u&&!BAD[u]})}
+function noImg(name,cls){var d=document.createElement("div");d.className="noimg"+(cls?" "+cls:"");d.innerHTML="<span>"+esc(name||"ZELQIO")+"</span><small>Photo coming soon</small>";return d}
+function photo(img,list,name,cls,done){var a=good(list),i=0;
+function fail(){img.onerror=img.onload=null;if(img.parentNode)img.parentNode.replaceChild(noImg(name,cls),img);if(done)done(null)}
+if(!a.length)return fail();img.onerror=function(){BAD[a[i]]=1;i++;if(i<a.length)img.src=a[i];else fail()};img.onload=function(){if(done)done(a[i])};img.src=a[0]}
 var CB={planners:"Made for people who like to plan on paper. Printed in India and finished for everyday use.",puzzles:"A relaxed offline activity for family time, gifting and quiet evenings. Check the photos for the finished picture and pack details.",cushions:"Soft home decor inspired by Indian folk art, made to brighten your sofa, bed or dining table. Check the photos for size and set contents.",totes:"A roomy everyday carry with a bold Bengali design. Check the photos for size and print placement.","desk-mats":"A large printed desk mat that sits under your keyboard and mouse and keeps useful information right in front of you. Check the photos for size and thickness details.",dining:"A printed table runner with matching placemats, made to dress up everyday meals and festive dinners. Check the photos for sizes and set contents.",drinkware:"An everyday bottle or mug with a printed design. Check the photos for capacity and care details.",apparel:"Comfortable everyday clothing with a printed ZELQIO design. Check the photos and size guide before ordering.","wall-art":"A printed poster or wall piece to brighten your room, study or office. Check the photos for size and finish.",accessories:"A small printed accessory that makes an easy everyday gift. Check the photos for size and details.",cards:"A pack of printed greeting cards for festivals and family occasions. Check the photos for the designs included and the card size."};
 function moreInfo(p){var s=(p.name.match(/\(([^)]*)\)/)||[])[1],h='<p>'+esc(CB[p.category]||"Designed by ZELQIO in India and printed to order.")+'</p><ul class="gk"><li>Designed by ZELQIO in India</li>';
 if(s)h+='<li>Size or pack: '+esc(s)+'</li>';
 h+='<li>Printed to order and dispatched within 4 working days</li><li>Delivered across India, see <a href="shipping.html" style="color:var(--b)">shipping</a></li><li>No returns or exchanges. Damaged or wrong items are covered if reported within 48 hours of delivery</li></ul>';return h}
 function render(){
-var p=cp,o=offer(p),m=mrp(p),off=Math.round((1-o/m)*100),a=imgs(p);
-var h='<button class="x" id="cx" aria-label="Close">✕</button><div class="gal"><img class="mi" id="mi" src="'+esc(a[gi]||a[0])+'" alt="'+esc(p.name)+'">';
-if(a.length>1){h+='<div class="th">';a.forEach(function(u,i){h+='<img data-i="'+i+'" class="'+(i===gi?"on":"")+'" src="'+esc(u)+'" alt="">'});h+='</div>'}
+var p=cp,o=offer(p),m=mrp(p),off=Math.round((1-o/m)*100),a=good(imgs(p));if(gi>=a.length)gi=0;
+var h='<button class="x" id="cx" aria-label="Close">✕</button><div class="gal"><img class="mi" id="mi" loading="lazy" decoding="async" width="800" height="800" alt="'+esc(p.name)+'">';
+if(a.length>1){h+='<div class="th">';a.forEach(function(u,i){h+='<img data-i="'+i+'" class="'+(i===gi?"on":"")+'" loading="lazy" decoding="async" width="58" height="58" alt="">'});h+='</div>'}
 h+='</div><div class="det">';
 if(view==="p"){
 h+='<h2>'+esc(p.name)+'</h2><div class="big"><span class="of">'+RS+fmt(o*qty)+'</span>'+(off>0?'<s style="color:var(--mut)">'+RS+fmt(m*qty)+'</s><em style="font-style:normal;color:#3dffb0;font-weight:700">'+off+'% off</em>':'')+'</div>';
@@ -261,7 +268,13 @@ else if(view==="c"){h+=checkoutHtml()}
 else{h+='<h2>Order confirmed</h2><p>Thank you! Your payment was received. Order ID: <b>'+esc(window.__oid||"")+'</b>. A receipt and confirmation will be emailed to you shortly.</p><button class="btn" id="done">Continue shopping</button>'}
 h+='</div>';$("pn").innerHTML=h;
 $("cx").onclick=closeP;
-var mi=$("mi");[].forEach.call($("pn").querySelectorAll(".th img"),function(t){t.onclick=function(){gi=+t.getAttribute("data-i");mi.src=a[gi];[].forEach.call($("pn").querySelectorAll(".th img"),function(x){x.classList.remove("on")});t.classList.add("on")}});
+var mi=$("mi"),pn=$("pn");
+function mark(u){[].forEach.call(pn.querySelectorAll(".th img"),function(x){var on=a[+x.getAttribute("data-i")]===u;x.classList.toggle("on",on);if(on)gi=+x.getAttribute("data-i")})}
+function show(i){photo(mi,a.slice(i).concat(a.slice(0,i)),p.name,"mi",mark)}
+[].forEach.call(pn.querySelectorAll(".th img"),function(t){var u=a[+t.getAttribute("data-i")];
+t.onerror=function(){BAD[u]=1;var th=t.parentNode;t.remove();if(th&&th.querySelectorAll("img").length<2)th.remove()};t.src=u;
+t.onclick=function(){if(mi.parentNode)show(+t.getAttribute("data-i"))}});
+show(gi);
 if(view==="p"){$("qm").onclick=function(){qty=Math.max(1,qty-1);render()};$("qp").onclick=function(){qty=Math.min(10,qty+1);render()};$("buy").onclick=function(){view="c";render()}}
 else if(view==="c"){wireCheckout()}
 else{$("done").onclick=closeP}}
