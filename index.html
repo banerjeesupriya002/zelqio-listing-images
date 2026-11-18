@@ -171,10 +171,12 @@ section{padding:60px 5vw}
 </footer>
 <div id="ov"><div class="pn" id="pn"></div></div>
 <script src="config.js"></script>
+<script src="categories.js"></script>
 <script>
 (function(){
 var C=window.ZCFG||{};
-var INFO={"desk-mats":["Desk Mats","🖱️","linear-gradient(150deg,#5b3df5,#b13dff)","Own your workspace"],"cushions":["Cushions","🛋️","linear-gradient(150deg,#ff3ec9,#ff8a3d)","Soften the room"],"totes":["Totes","👜","linear-gradient(150deg,#00c2ff,#3d6bff)","Carry the vibe"],"puzzles":["Puzzles","🧩","linear-gradient(150deg,#00d9a0,#0095ff)","Slow down, play"],"phone-cases":["Phone Cases","📱","linear-gradient(150deg,#ff5f6d,#ffc371)","Pocket-sized art"],"planners":["Planners","📓","linear-gradient(150deg,#7c5cff,#00c2ff)","Plan in style"],"dining":["Dining Sets","🍽️","linear-gradient(150deg,#ff8a3d,#ff3e6c)","Dress the table"],"bottles":["Bottles","🍶","linear-gradient(150deg,#00d9a0,#3d6bff)","Sip and learn"],"cards":["Greeting Cards","💌","linear-gradient(150deg,#ff3ec9,#7c5cff)","Say it by hand"]};
+var INFO={"desk-mats":["🖱️","linear-gradient(150deg,#5b3df5,#b13dff)","Own your workspace"],"cushions":["🛋️","linear-gradient(150deg,#ff3ec9,#ff8a3d)","Soften the room"],"dining":["🍽️","linear-gradient(150deg,#ff8a3d,#ff3e6c)","Dress the table"],"puzzles":["🧩","linear-gradient(150deg,#00d9a0,#0095ff)","Slow down, play"],"planners":["📓","linear-gradient(150deg,#7c5cff,#00c2ff)","Plan in style"],"totes":["👜","linear-gradient(150deg,#00c2ff,#3d6bff)","Carry the vibe"],"drinkware":["🍶","linear-gradient(150deg,#00d9a0,#3d6bff)","Sip in style"],"apparel":["👕","linear-gradient(150deg,#7c5cff,#ff3ec9)","Wear the vibe"],"cards":["💌","linear-gradient(150deg,#ff3ec9,#7c5cff)","Say it by hand"],"wall-art":["🖼️","linear-gradient(150deg,#ff5f6d,#ffc371)","Make the walls talk"],"accessories":["🔑","linear-gradient(150deg,#00c2ff,#b13dff)","Little things, big vibe"]};
+var ZC=window.ZCAT;
 var STATES=["Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chhattisgarh","Goa","Gujarat","Haryana","Himachal Pradesh","Jharkhand","Karnataka","Kerala","Madhya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Odisha","Punjab","Rajasthan","Sikkim","Tamil Nadu","Telangana","Tripura","Uttar Pradesh","Uttarakhand","West Bengal","Andaman and Nicobar Islands","Chandigarh","Dadra and Nagar Haveli and Daman and Diu","Delhi","Jammu and Kashmir","Ladakh","Lakshadweep","Puducherry"];
 var RS="₹";
 function $(i){return document.getElementById(i)}
@@ -183,7 +185,7 @@ function fmt(n){return Number(n).toLocaleString("en-IN")}
 var products=[],disc=15,keys=[],by={},pos=0,auto=true,cat=null,items=[];
 function mrp(p){return Number(p.mrp||p.price)}
 function offer(p){return p.offerPrice?Number(p.offerPrice):Math.round(mrp(p)*(1-disc/100))}
-function info(k){return INFO[k]||[k.replace(/-/g," ").replace(/^./,function(c){return c.toUpperCase()}),"✨","linear-gradient(150deg,#7c5cff,#ff3ec9)","Fresh designs"]}
+function info(k){return [ZC.label(k)].concat(INFO[k]||["✨","linear-gradient(150deg,#7c5cff,#ff3ec9)","Fresh designs"])}
 function mode(){var w=innerWidth;return w>=1024?"d":(w>=641?"t":"m")}
 function wrap(d,n){return(((d+n/2)%n)+n)%n-n/2}
 var ring=$("ring");
@@ -221,8 +223,10 @@ addEventListener("keydown",function(e){if($("ov").classList.contains("on")){if(e
 addEventListener("resize",layout);
 var reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
 setInterval(function(){if(auto&&!document.hidden&&!reduce&&keys.length){pos+=1;layout();upd()}},3800);
+function fromHash(){var k=ZC.strict(decodeURIComponent(location.hash.slice(1)));if(!k)return;if(by[k]){pos=keys.indexOf(k);auto=false;layout();upd();pick(k)}else{$("picker").scrollIntoView({behavior:"smooth"})}}
+addEventListener("hashchange",fromHash);
 function pick(k){
-cat=k;var f=info(k);var list=by[k]||[];
+cat=k;if(location.hash.slice(1)!==k)try{history.replaceState(null,"","#"+k)}catch(e){}var f=info(k);var list=by[k]||[];
 $("stitle").textContent=f[0];$("ssub").textContent=list.length+(list.length===1?" design":" designs")+" · "+f[3];
 var ch=$("chips");ch.textContent="";keys.forEach(function(x){var b=document.createElement("button");b.className="chip"+(x===k?" on":"");b.textContent=info(x)[1]+" "+info(x)[0];b.onclick=function(){pick(x)};ch.appendChild(b)});
 var g=$("grid");g.textContent="";
@@ -237,7 +241,7 @@ function openP(p){cp=p;qty=1;view="p";gi=0;$("ov").classList.add("on");document.
 function closeP(){$("ov").classList.remove("on");document.body.style.overflow=""}
 $("ov").addEventListener("click",function(e){if(e.target===$("ov"))closeP()});
 function imgs(p){var a=[p.image].concat(p.images||[]).filter(Boolean);return a.filter(function(v,i){return a.indexOf(v)===i})}
-var CB={planners:"Made for people who like to plan on paper. Printed in India and finished for everyday use.",puzzles:"A relaxed offline activity for family time, gifting and quiet evenings. Check the photos for the finished picture and pack details.",cushions:"Soft home decor inspired by Indian folk art, made to brighten your sofa, bed or dining table. Check the photos for size and set contents.",totes:"A roomy everyday carry with a bold Bengali design. Check the photos for size and print placement.","desk-mats":"A large printed desk mat that sits under your keyboard and mouse and keeps useful information right in front of you. Check the photos for size and thickness details.",dining:"A printed table runner with matching placemats, made to dress up everyday meals and festive dinners. Check the photos for sizes and set contents.",bottles:"An everyday sipper bottle with a printed design that doubles as a learning aid. Check the photos for capacity and care details.",cards:"A pack of printed greeting cards for festivals and family occasions. Check the photos for the designs included and the card size."};
+var CB={planners:"Made for people who like to plan on paper. Printed in India and finished for everyday use.",puzzles:"A relaxed offline activity for family time, gifting and quiet evenings. Check the photos for the finished picture and pack details.",cushions:"Soft home decor inspired by Indian folk art, made to brighten your sofa, bed or dining table. Check the photos for size and set contents.",totes:"A roomy everyday carry with a bold Bengali design. Check the photos for size and print placement.","desk-mats":"A large printed desk mat that sits under your keyboard and mouse and keeps useful information right in front of you. Check the photos for size and thickness details.",dining:"A printed table runner with matching placemats, made to dress up everyday meals and festive dinners. Check the photos for sizes and set contents.",drinkware:"An everyday bottle or mug with a printed design. Check the photos for capacity and care details.",apparel:"Comfortable everyday clothing with a printed ZELQIO design. Check the photos and size guide before ordering.","wall-art":"A printed poster or wall piece to brighten your room, study or office. Check the photos for size and finish.",accessories:"A small printed accessory that makes an easy everyday gift. Check the photos for size and details.",cards:"A pack of printed greeting cards for festivals and family occasions. Check the photos for the designs included and the card size."};
 function moreInfo(p){var s=(p.name.match(/\(([^)]*)\)/)||[])[1],h='<p>'+esc(CB[p.category]||"Designed by ZELQIO in India and printed to order.")+'</p><ul class="gk"><li>Designed by ZELQIO in India</li>';
 if(s)h+='<li>Size or pack: '+esc(s)+'</li>';
 h+='<li>Printed to order and dispatched within 4 working days</li><li>Delivered across India, see <a href="shipping.html" style="color:var(--b)">shipping</a></li><li>No returns or exchanges. Damaged or wrong items are covered if reported within 48 hours of delivery</li></ul>';return h}
@@ -306,9 +310,9 @@ rz.open()})}).catch(function(x){e.textContent=x.message||"Something went wrong. 
 fetch("products.json?v="+Date.now()).then(function(r){return r.json()}).then(function(j){
 products=(j.products||[]).filter(function(p){return p&&p.id&&p.price});
 if(typeof j.discountPercent==="number")disc=j.discountPercent;
-products.forEach(function(p){(by[p.category]=by[p.category]||[]).push(p)});
-var order=Object.keys(INFO);keys=Object.keys(by).sort(function(a,b){var x=order.indexOf(a),y=order.indexOf(b);return(x<0?99:x)-(y<0?99:y)});
-if(!keys.length){$("picker").style.display="none"}else build()}).catch(function(){$("plead").textContent="Our collection is loading. Please refresh in a moment."});
+products.forEach(function(p){var r=ZC.resolve(p.category,p);if(!r.ok&&window.console)console.warn("ZELQIO: product "+p.id+" has unknown category \""+p.category+"\", shown under "+r.slug);p.category=r.slug;(by[r.slug]=by[r.slug]||[]).push(p)});
+keys=ZC.order.filter(function(k){return by[k]&&by[k].length});
+if(!keys.length){$("picker").style.display="none"}else{build();fromHash()}}).catch(function(){$("plead").textContent="Our collection is loading. Please refresh in a moment."});
 var words=["desk","sofa","table","tote","mood","everyday"],wi=0,r=$("rot");
 setInterval(function(){if(reduce)return;r.style.opacity=0;r.style.transform="translateY(8px)";setTimeout(function(){wi=(wi+1)%words.length;r.textContent=words[wi];r.style.opacity=1;r.style.transform="none"},300)},2200);
 $("yr").textContent=new Date().getFullYear();
@@ -316,7 +320,7 @@ var gl=$("glow");addEventListener("pointermove",function(e){gl.style.left=e.clie
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add("in")})},{threshold:.1});
 [].forEach.call(document.querySelectorAll(".rv"),function(e){io.observe(e)});
 })();
-(function(){var o=document.getElementById("intro");if(!o)return;var s=0;try{s=sessionStorage.getItem("zi")}catch(e){}if(s||(window.matchMedia&&matchMedia("(prefers-reduced-motion:reduce)").matches)){o.remove();return}try{sessionStorage.setItem("zi","1")}catch(e){}o.style.setProperty("--k",Math.min(1,innerWidth/480));var op=0,dn=0;function done(){if(dn)return;dn=1;o.classList.add("out");setTimeout(function(){o.remove();var p=document.getElementById("picker");if(p&&!location.hash)p.scrollIntoView({behavior:"smooth"})},750)}function open(){if(op)return;op=1;o.classList.add("open");setTimeout(function(){o.classList.add("fin")},1500);setTimeout(done,3600)}o.onclick=function(e){if(e.target.className==="sk"){done();return}if(!op)open();else done()};setTimeout(function(){if(!op)open()},6000)})();
+(function(){var o=document.getElementById("intro");if(!o)return;var s=0;try{s=sessionStorage.getItem("zi")}catch(e){}if(s||(window.ZCAT&&ZCAT.strict(decodeURIComponent(location.hash.slice(1))))||(window.matchMedia&&matchMedia("(prefers-reduced-motion:reduce)").matches)){o.remove();return}try{sessionStorage.setItem("zi","1")}catch(e){}o.style.setProperty("--k",Math.min(1,innerWidth/480));var op=0,dn=0;function done(){if(dn)return;dn=1;o.classList.add("out");setTimeout(function(){o.remove();var p=document.getElementById("picker");if(p&&!location.hash)p.scrollIntoView({behavior:"smooth"})},750)}function open(){if(op)return;op=1;o.classList.add("open");setTimeout(function(){o.classList.add("fin")},1500);setTimeout(done,3600)}o.onclick=function(e){if(e.target.className==="sk"){done();return}if(!op)open();else done()};setTimeout(function(){if(!op)open()},6000)})();
 </script>
 </body>
 </html>
