@@ -115,6 +115,16 @@ footer a:hover{color:var(--fg)}
 .rv{opacity:0;transform:translateY(30px);transition:opacity .8s,transform .8s}
 .rv.in{opacity:1;transform:none}
 :root{--cw:390px;--ch:430px}
+.hdl{width:36px;height:4px;border-radius:2px;background:rgba(255,255,255,.22);margin:10px auto 4px;flex-shrink:0;cursor:grab;display:none}
+.car{display:none;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;width:100%;scrollbar-width:none}
+.car::-webkit-scrollbar{display:none}
+.cs{flex:none;width:100%;aspect-ratio:1/1;object-fit:cover;scroll-snap-align:center;display:block}
+.cdots{display:none;gap:6px;justify-content:center;padding:6px 0;flex-shrink:0}
+.cdots i{width:6px;height:6px;border-radius:50%;background:var(--bd);transition:.3s}
+.cdots i.on{background:var(--fg);width:18px;border-radius:6px}
+.sbb{display:none;align-items:center;gap:12px;padding:12px 18px calc(12px + env(safe-area-inset-bottom));background:#0e0e1a;border-top:1px solid var(--bd);flex-shrink:0}
+.sbb .btn{flex:1;min-height:56px;text-align:center}
+.sbp{font-size:1.1rem;font-weight:800;white-space:nowrap;flex-shrink:0}
 @media(max-width:1023px){:root{--cw:330px;--ch:410px}.grid{grid-template-columns:repeat(3,1fr)}.pn{grid-template-columns:1fr;width:min(620px,100%)}}
 @media(max-width:640px){
 :root{--cw:min(58vw,230px);--ch:min(42vh,310px)}
@@ -126,10 +136,11 @@ section{padding:60px 5vw}
 .grid{grid-template-columns:1fr 1fr;gap:12px}
 .in{padding:10px 12px 14px}.nm{font-size:.86rem}.of{font-size:1rem}
 #ov{align-items:flex-end;padding:0}
-.pn{width:100%;max-height:93dvh;border-radius:26px 26px 0 0;animation:up .4s both}
-.det{padding:22px 18px 30px}
+.pn{width:100%;max-height:93dvh;border-radius:26px 26px 0 0;animation:up .4s both;overflow:hidden;display:flex;flex-direction:column}
+.det{padding:22px 18px 30px;flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
 .btn{width:100%;text-align:center}.ctl{flex-wrap:nowrap}.ctl .btn{width:auto;flex:1;padding:14px 10px}
 .stage{height:54vh}
+.gal{flex:none}.car{display:flex;aspect-ratio:1/1}.cdots{display:flex}.hdl{display:block}.gal .mi,.th{display:none}.mbuy{display:none}.sbb{display:flex}
 }
 @keyframes up{from{transform:translateY(100%)}to{transform:none}}
 @keyframes shimmer{to{background-position:-200% 0}}
@@ -243,6 +254,11 @@ var cp=null,qty=1,idt=null,gu=null,view="p",gi=0;
 function openP(p){cp=p;qty=1;view="p";gi=0;$("ov").classList.add("on");document.body.style.overflow="hidden";render()}
 function closeP(){$("ov").classList.remove("on");document.body.style.overflow=""}
 $("ov").addEventListener("click",function(e){if(e.target===$("ov"))closeP()});
+// Swipe-to-dismiss bottom sheet via drag handle
+(function(){var sy=null,py=0,ov=$('ov');
+ov.addEventListener('pointerdown',function(e){if(e.target.closest&&e.target.closest('.hdl')){sy=e.clientY;py=0}},true);
+ov.addEventListener('pointermove',function(e){if(sy!=null)py=e.clientY-sy},true);
+ov.addEventListener('pointerup',function(){if(sy!=null&&py>80)closeP();sy=null;py=0},true)})();
 function imgs(p){var a=[p.image].concat(p.images||[]).filter(Boolean);return a.filter(function(v,i){return a.indexOf(v)===i})}
 /* Product photos: if one fails to load, try the next photo of the same product; if none load, show a clean tile with the product name. */
 var BAD={};
@@ -257,19 +273,23 @@ if(s)h+='<li>Size or pack: '+esc(s)+'</li>';
 h+='<li>Printed to order and dispatched within 4 working days</li><li>Delivered across India, see <a href="shipping.html" style="color:var(--b)">shipping</a></li><li>No returns or exchanges. Damaged or wrong items are covered if reported within 48 hours of delivery</li></ul>';return h}
 function render(){
 var p=cp,o=offer(p),m=mrp(p),off=Math.round((1-o/m)*100),a=good(imgs(p));if(gi>=a.length)gi=0;
-var h='<button class="x" id="cx" aria-label="Close">✕</button><div class="gal"><img class="mi" id="mi" loading="lazy" decoding="async" width="800" height="800" alt="'+esc(p.name)+'">';
+var h='<div class="hdl"></div><button class="x" id="cx" aria-label="Close">✕</button><div class="gal"><div class="car" id="car">';
+a.forEach(function(u,i){h+='<img class="cs" '+(i===0?'loading="eager"':'loading="lazy"')+' decoding="async" width="800" height="800" alt="'+esc(p.name)+'" src="'+esc(u)+'">'});
+h+='</div>';
+if(a.length>1){h+='<div class="cdots" id="cdots">';a.forEach(function(u,i){h+='<i'+(i===0?' class="on"':'')+'></i>'});h+='</div>'}
+h+='<img class="mi" id="mi" loading="lazy" decoding="async" width="800" height="800" alt="'+esc(p.name)+'">';
 if(a.length>1){h+='<div class="th">';a.forEach(function(u,i){h+='<img data-i="'+i+'" class="'+(i===gi?"on":"")+'" loading="lazy" decoding="async" width="58" height="58" alt="">'});h+='</div>'}
 h+='</div><div class="det">';
 if(view==="p"){
 h+='<h2>'+esc(p.name)+'</h2><div class="big"><span class="of">'+RS+fmt(o*qty)+'</span>'+(off>0?'<s style="color:var(--mut)">'+RS+fmt(m*qty)+'</s><em style="font-style:normal;color:#3dffb0;font-weight:700">'+off+'% off</em>':'')+'</div>';
 if(p.description)h+='<p>'+esc(p.description)+'</p>'+moreInfo(p);
 h+='<div class="qty"><button id="qm">&minus;</button><b id="qv">'+qty+'</b><button id="qp">+</button></div>';
-h+='<button class="btn" id="buy">Buy now</button>';
+h+='<button class="btn mbuy" id="buy">Buy now</button>';
 if(p.amazonUrl)h+='<a class="btn ghost" style="text-align:center" target="_blank" rel="noopener" href="'+esc(p.amazonUrl)+'">Also on Amazon</a>';
 h+='<div class="note">Made to order and printed for you. No returns or exchanges (damaged or wrong items are covered, see <a href="refund.html" style="color:var(--b)">policy</a>).</div>'}
 else if(view==="c"){h+=checkoutHtml()}
 else{h+='<h2>Order confirmed</h2><p>Thank you! Your payment was received. Order ID: <b>'+esc(window.__oid||"")+'</b>. A receipt and confirmation will be emailed to you shortly.</p><button class="btn" id="done">Continue shopping</button>'}
-h+='</div>';$("pn").innerHTML=h;
+h+='</div>'+(view==="p"?'<div class="sbb" id="sbb"><span class="sbp">'+RS+fmt(o*qty)+'</span><button class="btn" id="sbuy">Buy now</button></div>':'');$("pn").innerHTML=h;
 $("cx").onclick=closeP;
 var mi=$("mi"),pn=$("pn");
 function mark(u){[].forEach.call(pn.querySelectorAll(".th img"),function(x){var on=a[+x.getAttribute("data-i")]===u;x.classList.toggle("on",on);if(on)gi=+x.getAttribute("data-i")})}
@@ -278,6 +298,10 @@ function show(i){photo(mi,a.slice(i).concat(a.slice(0,i)),p.name,"mi",mark)}
 t.onerror=function(){BAD[u]=1;var th=t.parentNode;t.remove();if(th&&th.querySelectorAll("img").length<2)th.remove()};t.src=u;
 t.onclick=function(){if(mi.parentNode)show(+t.getAttribute("data-i"))}});
 show(gi);
+var car=pn.querySelector('#car'),cdts=pn.querySelector('#cdots');
+if(car&&cdts){car.addEventListener('scroll',function(){var i=Math.round(car.scrollLeft/Math.max(1,car.offsetWidth));[].forEach.call(cdts.children,function(d,j){d.classList.toggle('on',j===i)})},{passive:true})}
+[].forEach.call(pn.querySelectorAll('.cs'),function(si){si.addEventListener('click',function(){var lb=document.createElement('div');lb.style.cssText='position:fixed;inset:0;z-index:999;background:#000;display:flex;align-items:center;justify-content:center;touch-action:pinch-zoom';var im=document.createElement('img');im.style.cssText='max-width:100%;max-height:100%;object-fit:contain';im.src=si.src;lb.appendChild(im);lb.onclick=function(){document.body.removeChild(lb)};document.body.appendChild(lb)})})
+var sbuy=pn.querySelector('#sbuy');if(sbuy)sbuy.onclick=function(){view='c';render()}
 if(view==="p"){$("qm").onclick=function(){qty=Math.max(1,qty-1);render()};$("qp").onclick=function(){qty=Math.min(10,qty+1);render()};$("buy").onclick=function(){view="c";render()}}
 else if(view==="c"){wireCheckout()}
 else{$("done").onclick=closeP}}
