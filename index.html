@@ -17,7 +17,7 @@
 <meta property="og:image" content="https://zelqio.in/Gemini_Generated_Image_5d1f65d1f65d1f65.png">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://zelqio.in/#org","name":"ZELQIO","url":"https://zelqio.in/","logo":"https://zelqio.in/Gemini_Generated_Image_5d1f65d1f65d1f65.png","legalName":"Joy Guru Fashions"},{"@type":"WebSite","url":"https://zelqio.in/","name":"ZELQIO","publisher":{"@id":"https://zelqio.in/#org"}}]}</script>
-<script>(function(){fetch("products.json").then(function(r){return r.json()}).then(function(a){var d=typeof a.discountPercent==="number"?a.discountPercent:15;var U="https://zelqio.in/";function ab(s){return /^http/.test(s)?s:U+s}var g=a.products.map(function(p){var m=Number(p.mrp||p.price);var o=p.offerPrice?Number(p.offerPrice):Math.round(m*(1-d/100));return {"@type":"Product","name":p.name,"sku":p.id,"description":p.description||p.name,"image":[p.image].concat(p.images||[]).filter(Boolean).slice(0,6).map(ab),"brand":{"@type":"Brand","name":"ZELQIO"},"category":p.category,"offers":{"@type":"Offer","url":U+"#"+p.id,"priceCurrency":"INR","price":o,"availability":"https://schema.org/InStock","itemCondition":"https://schema.org/NewCondition","hasMerchantReturnPolicy":{"@type":"MerchantReturnPolicy","returnPolicyCategory":"https://schema.org/MerchantReturnNotPermitted"}}}});var s=document.createElement("script");s.type="application/ld+json";s.text=JSON.stringify({"@context":"https://schema.org","@graph":g});document.head.appendChild(s)}).catch(function(){})})();</script>
+<script>(function(){fetch("products.json").then(function(r){return r.json()}).then(function(a){var d=typeof a.discountPercent==="number"?a.discountPercent:15;var U="https://zelqio.in/";function ab(s){return /^http/.test(s)?s:U+s}var g=a.products.filter(function(p){return !p.hidden}).map(function(p){var m=Number(p.mrp||p.price);var o=p.offerPrice?Number(p.offerPrice):Math.round(m*(1-d/100));return {"@type":"Product","name":p.name,"sku":p.id,"description":p.description||p.name,"image":[p.image].concat(p.images||[]).filter(Boolean).slice(0,6).map(ab),"brand":{"@type":"Brand","name":"ZELQIO"},"category":p.category,"offers":{"@type":"Offer","url":U+"#"+p.id,"priceCurrency":"INR","price":o,"availability":"https://schema.org/InStock","itemCondition":"https://schema.org/NewCondition","hasMerchantReturnPolicy":{"@type":"MerchantReturnPolicy","returnPolicyCategory":"https://schema.org/MerchantReturnNotPermitted"}}}});var s=document.createElement("script");s.type="application/ld+json";s.text=JSON.stringify({"@context":"https://schema.org","@graph":g});document.head.appendChild(s)}).catch(function(){})})();</script>
 <style>
 :root{--bg:#07070d;--fg:#f4f4fb;--mut:#9a9ab5;--a:#7c5cff;--b:#00e5ff;--c:#ff3ec9;--card:rgba(255,255,255,.06);--bd:rgba(255,255,255,.12)}
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
@@ -505,7 +505,7 @@ function bagSave(){try{localStorage.setItem(BK,JSON.stringify(BAG))}catch(e){}}
 function pById(id){for(var i=0;i<products.length;i++)if(String(products[i].id)===String(id))return products[i];return null}
 function bagLines(){var r=[];BAG.forEach(function(x){var p=pById(x.id);if(p)r.push({p:p,q:x.q})});return r}
 function bagTot(ls){var t=0,m=0,n=0;ls.forEach(function(l){t+=offer(l.p)*l.q;m+=mrp(l.p)*l.q;n+=l.q});return{t:t,m:m,s:m-t,n:n}}
-function bagPrune(){BAG=BAG.filter(function(x){return pById(x.id)});bagSave()}
+function bagPrune(){var n=BAG.length;BAG=BAG.filter(function(x){return pById(x.id)});bagSave();if(BAG.length<n)setTimeout(function(){toast("Some items in your bag are no longer available and were removed")},900)}
 function bagAdd(p,q){var f=null;BAG.forEach(function(x){if(String(x.id)===String(p.id))f=x});if(f)f.q=Math.min(10,f.q+q);else BAG.push({id:p.id,q:Math.min(10,q)});bagSave();bagUpd()}
 function bagUpd(){
 var ls=bagLines(),tt=bagTot(ls),n=tt.n;
@@ -613,7 +613,7 @@ function up(){if(sy!=null&&py>80)closeBag();sy=null;py=0}
 bg.addEventListener("pointerup",up,true);bg.addEventListener("pointercancel",up,true)})();
 addEventListener("storage",function(e){if(e.key===BK){bagLoad();bagUpd();if($("bag").classList.contains("on")&&bstep==="b")renderBag()}});
 fetch("products.json?v="+Date.now()).then(function(r){return r.json()}).then(function(j){
-products=(j.products||[]).filter(function(p){return p&&p.id&&p.price});
+products=(j.products||[]).filter(function(p){return p&&p.id&&p.price&&!p.hidden});
 if(typeof j.discountPercent==="number")disc=j.discountPercent;
 products.forEach(function(p){var r=ZC.resolve(p.category,p);if(!r.ok&&window.console)console.warn("ZELQIO: product "+p.id+" has unknown category \""+p.category+"\", shown under "+r.slug);p.category=r.slug;(by[r.slug]=by[r.slug]||[]).push(p)});
 keys=ZC.order.filter(function(k){return by[k]&&by[k].length});
