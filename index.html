@@ -153,22 +153,12 @@ section{padding:60px 5vw}
   @keyframes rv-in{to{opacity:1;transform:none}}
   .rv{opacity:0;transform:translateY(24px);animation:rv-in linear both;animation-timeline:view();animation-range:entry 0% entry 30%}
 }
-@supports(view-transition-name:none){
-  ::view-transition-group(z-morph){animation-duration:.42s;animation-timing-function:cubic-bezier(.2,.8,.2,1)}
-  ::view-transition-old(z-morph){animation:none}
-  ::view-transition-new(z-morph){animation:none}
-}
-@keyframes nav-in{from{opacity:0;transform:translateY(-8px)}}
-nav .lk a{animation:nav-in .5s both}
-nav .lk a:nth-child(2){animation-delay:.08s}
-nav .lk a:nth-child(3){animation-delay:.16s}
-nav .lk a:nth-child(4){animation-delay:.24s}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
 #intro{position:fixed;inset:0;z-index:999;background:radial-gradient(circle at 50% 45%,#16113a,#07070d 70%);display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .7s;cursor:pointer;overflow:hidden}#intro.out{opacity:0;pointer-events:none}.stg{position:relative;width:300px;height:270px}.ib{position:absolute;bottom:36px;left:50%;width:120px;height:96px;margin-left:-60px;animation:ibin .7s cubic-bezier(.2,1.2,.4,1) both,bob 1.8s .7s ease-in-out infinite;transition:transform .6s,opacity .6s}@keyframes ibin{from{opacity:0;transform:scale(.5)}}@keyframes bob{50%{transform:translateY(-8px)}}.bx{position:absolute;bottom:0;left:0;right:0;height:62px;border-radius:10px;background:linear-gradient(150deg,#5b3df5,#00c2ff);box-shadow:0 0 50px rgba(124,92,255,.6)}.ld{position:absolute;bottom:56px;left:-7px;right:-7px;height:24px;border-radius:8px;background:linear-gradient(150deg,#7c5cff,#ff3ec9);transform-origin:left bottom;transition:transform .7s cubic-bezier(.3,1.5,.5,1)}#intro.open .ib{animation:none}#intro.open .ld{transform:translateY(-8px) rotate(-28deg)}#intro.fin .ib{opacity:0;transform:scale(.4)}.ch{position:absolute;left:50%;bottom:76px;padding:8px 15px;border-radius:999px;font-size:.78rem;font-weight:700;color:#fff;white-space:nowrap;opacity:0;transform:translate(-50%,0) scale(.3);transition:transform .9s cubic-bezier(.2,1.3,.4,1),opacity .4s;background:linear-gradient(120deg,#7c5cff,#00c2ff);box-shadow:0 6px 24px rgba(124,92,255,.45)}.ch:nth-child(even){background:linear-gradient(120deg,#ff3ec9,#7c5cff)}#intro.open .ch{opacity:1;transform:translate(calc(-50% + var(--x)*var(--k,1)*1px),calc(var(--y)*var(--k,1)*1px)) scale(1);transition-delay:var(--d)}#intro.fin .ch{opacity:0;transform:translate(-50%,-30px) scale(.2);transition:all .55s;transition-delay:0s}.lg{position:absolute;bottom:20px;left:50%;width:150px;height:150px;margin-left:-75px;border-radius:34px;overflow:hidden;opacity:0;transform:scale(.4);transition:all .8s .25s cubic-bezier(.2,1.3,.4,1);box-shadow:0 0 70px rgba(124,92,255,.65)}.lg img{width:100%;height:100%;object-fit:cover;transform:scale(1.28);display:block}#intro.fin .lg{opacity:1;transform:scale(1)}.tp{color:#9a9ab5;letter-spacing:.3em;font-size:.72rem;margin-top:10px;animation:blink 1.6s infinite;transition:opacity .3s}@keyframes blink{50%{opacity:.3}}#intro.open .tp{opacity:0;animation:none}.it{color:#9a9ab5;opacity:0;margin-top:14px;transition:opacity .6s .6s}#intro.fin .it{opacity:1}.sk{position:fixed;top:16px;right:18px;font-size:.72rem;letter-spacing:.2em;color:#9a9ab5;padding:6px 12px;border:1px solid rgba(255,255,255,.14);border-radius:999px}.gk{margin:.4rem 0 .8rem;padding-left:1.1rem;color:var(--mut);font-size:.88rem;line-height:1.6}.gk li{margin:.15rem 0}</style>
 </head>
 <body>
 <div id="intro"><div class="stg"><div class="ib"><div class="bx"></div><div class="ld"></div></div><div class="ch" style="--x:-125;--y:-60;--d:.05s">Desk Mats</div><div class="ch" style="--x:-70;--y:-140;--d:.15s">Cushions</div><div class="ch" style="--x:0;--y:-185;--d:.25s">Puzzles</div><div class="ch" style="--x:70;--y:-140;--d:.35s">Planners</div><div class="ch" style="--x:125;--y:-60;--d:.45s">Totes</div><div class="lg"><img src="Gemini_Generated_Image_5d1f65d1f65d1f65.png" alt="ZELQIO"></div></div><div class="tp">TAP TO OPEN</div><div class="it">Made for your everyday</div><div class="sk">SKIP</div></div>
-<div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div><div id="glow"></div><svg aria-hidden="true" style="position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.032"><filter id="gf"><feTurbulence type="fractalNoise" baseFrequency=".65" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter><rect width="100%" height="100%" filter="url(#gf)"/></svg>
+<div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div><div id="glow"></div>
 <nav><a class="logo" href="#top">ZELQIO</a><div class="lk"><a href="#top">Home</a><a href="#picker">Categories</a><a href="#about">About</a><a href="orders.html">My orders</a></div></nav>
 <header class="hero" id="top">
 <div class="tag">Made to order &middot; Designed in India</div>
@@ -265,11 +255,11 @@ list.forEach(function(p,i){var b=document.createElement("button");b.className="p
 var o=offer(p),m=mrp(p),off=Math.round((1-o/m)*100);
 b.innerHTML='<div class="im"><img loading="lazy" decoding="async" width="600" height="600" alt=""></div><div class="in"><div class="nm">'+esc(p.name)+'</div><div class="pr"><span class="of">'+RS+fmt(o)+'</span>'+(off>0?'<s>'+RS+fmt(m)+'</s><em>'+off+'% off</em>':'')+'</div></div>';
 var ci=b.querySelector("img");ci.alt=p.name||"ZELQIO product";photo(ci,imgs(p),p.name);
-b.onclick=function(){openP(p,b)};g.appendChild(b)});
+b.onclick=function(){openP(p)};g.appendChild(b)});
 $("shop").classList.add("on");setTimeout(function(){$("shop").scrollIntoView({behavior:"smooth"})},60)}
-var cp=null,qty=1,idt=null,gu=null,view="p",gi=0,cel=null;
-function openP(p,el){cp=p;qty=1;view="p";gi=0;cel=el||null;try{sessionStorage.setItem('zsy',window.scrollY)}catch(e){}var pn=$('pn');if(el&&pn&&document.startViewTransition){el.style.viewTransitionName='z-morph';pn.style.viewTransitionName='z-morph';document.startViewTransition(function(){el.style.viewTransitionName='';$("ov").classList.add("on");document.body.style.overflow="hidden";render()}).finished.then(function(){pn.style.viewTransitionName=''})}else{$("ov").classList.add("on");document.body.style.overflow="hidden";render()}}
-function closeP(){var pn=$('pn');if(cel&&pn&&document.startViewTransition){cel.style.viewTransitionName='z-morph';pn.style.viewTransitionName='z-morph';document.startViewTransition(function(){cel.style.viewTransitionName='';pn.style.viewTransitionName='';$("ov").classList.remove("on");document.body.style.overflow=""}).finished.then(function(){cel=null;try{window.scrollTo(0,+sessionStorage.getItem('zsy')||0)}catch(e){}}}else{$("ov").classList.remove("on");document.body.style.overflow="";try{window.scrollTo(0,+sessionStorage.getItem('zsy')||0)}catch(e){}}}
+var cp=null,qty=1,idt=null,gu=null,view="p",gi=0;
+function openP(p){cp=p;qty=1;view="p";gi=0;try{sessionStorage.setItem('zsy',window.scrollY)}catch(e){}$("ov").classList.add("on");document.body.style.overflow="hidden";render()}
+function closeP(){$("ov").classList.remove("on");document.body.style.overflow="";try{window.scrollTo(0,+sessionStorage.getItem('zsy')||0)}catch(e){}}
 $("ov").addEventListener("click",function(e){if(e.target===$("ov"))closeP()});
 // Swipe-to-dismiss bottom sheet via drag handle
 (function(){var sy=null,py=0,ov=$('ov');
