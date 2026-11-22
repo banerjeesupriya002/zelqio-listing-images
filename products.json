@@ -1,6 +1,6 @@
 {
  "discountPercent": 15,
- "updated": "2026-11-17",
+ "updated": "2026-11-22",
  "products": [
   {
    "id": "2027-family-budget-savings-planner-a5",
@@ -388,7 +388,7 @@
    "id": "madhubani-fish-peacock-lotus-cushion-covers-set-of-3-for-sofa-16-16-in",
    "name": "Madhubani Fish, Peacock & Lotus Cushion Covers – Set of 3 for Sofa (16×16 in)",
    "category": "cushions",
-   "price": 999,
+   "price": 1499,
    "image": "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/madhubani-fish-peacock-lotus-cushion-covers-set-of-3-for-sofa-16-16-in/main-white.jpg",
    "images": [
     "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/madhubani-fish-peacock-lotus-cushion-covers-set-of-3-for-sofa-16-16-in/lifestyle-sofa.jpg",
@@ -399,7 +399,6 @@
     "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/madhubani-fish-peacock-lotus-cushion-covers-set-of-3-for-sofa-16-16-in/benefits.jpg",
     "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/madhubani-fish-peacock-lotus-cushion-covers-set-of-3-for-sofa-16-16-in/gift.jpg"
    ],
-   "amazonUrl": "",
    "description": "Give your sofa the colours of Mithila.",
    "tags": [
     "covers",
@@ -412,7 +411,9 @@
     "peacock",
     "sofa"
    ],
-   "updated": "2026-11-16"
+   "offerPrice": 1274,
+   "mrp": 1499,
+   "updatedAt": "2026-11-22T17:16:54.853Z"
   },
   {
    "id": "accountant-s-desk-mat-excel-tally-gst-due-dates-80-33-cm",
