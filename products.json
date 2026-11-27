@@ -1,6 +1,6 @@
 {
  "discountPercent": 15,
- "updated": "2026-11-22",
+ "updated": "2026-11-27",
  "products": [
   {
    "id": "2027-family-budget-savings-planner-a5",
@@ -586,6 +586,33 @@
    ],
    "offerPrice": 849,
    "mrp": 999
+  },
+  {
+   "id": "zelqio-bookworm-canvas-tote-bag",
+   "name": "ZELQIO “बस एक और चैप्टर” Bookworm Canvas Tote Bag",
+   "category": "totes",
+   "price": 799,
+   "image": "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/zelqio-bookworm-canvas-tote-bag/01-main-white-jpg-main-2000-2000-pure-white.jpg",
+   "images": [
+    "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/zelqio-bookworm-canvas-tote-bag/02-lifestyle-jpg-in-use-context.jpg",
+    "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/zelqio-bookworm-canvas-tote-bag/03-closeup-print-jpg-print-detail-close-up.jpg",
+    "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/zelqio-bookworm-canvas-tote-bag/04-whats-on-it-jpg-what-s-on-the-bag-explainer.jpg",
+    "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/zelqio-bookworm-canvas-tote-bag/05-size-guide-jpg-size-guide-cm-in.jpg",
+    "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/zelqio-bookworm-canvas-tote-bag/06-benefits-jpg-benefits-infographic.jpg"
+   ],
+   "description": "Give every book lover a bag that says exactly what they are thinking.",
+   "tags": [
+    "bag",
+    "bookworm",
+    "canvas",
+    "reader's-favourite-line",
+    "tote",
+    "totes",
+    "zelqio"
+   ],
+   "offerPrice": 679,
+   "mrp": 799,
+   "updatedAt": "2026-11-27T16:02:32.688Z"
   }
  ]
 }
