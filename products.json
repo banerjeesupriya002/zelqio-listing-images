@@ -83,7 +83,8 @@
    ],
    "updated": "2026-11-27",
    "mrp": 989,
-   "offerPrice": 841
+   "offerPrice": 841,
+   "hidden": true
   },
   {
    "id": "alpana-festive-dining-set-table-runner-4-placemats",
@@ -222,7 +223,8 @@
     "kolam",
     "pattern"
    ],
-   "updated": "2026-11-16"
+   "updated": "2026-11-16",
+   "hidden": true
   },
   {
    "id": "warli-village-cushion-covers-set-of-2-16-16-in",
@@ -249,7 +251,8 @@
     "village",
     "warli"
    ],
-   "updated": "2026-11-16"
+   "updated": "2026-11-16",
+   "hidden": true
   },
   {
    "id": "paise-ke-formule-hindi-english-money-desk-mat-80-33-cm",
