@@ -6,7 +6,7 @@
    "id": "2027-family-budget-savings-planner-a5",
    "name": "2027 Family Budget & Savings Planner (A5)",
    "category": "planners",
-   "price": 499,
+   "price": 479,
    "image": "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/2027-family-budget-savings-planner-a5/main-image-2000-2000-white-no-text.jpg",
    "images": [
     "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/2027-family-budget-savings-planner-a5/open-spread-monthly-budget-tracker.jpg",
@@ -25,13 +25,15 @@
     "planners",
     "savings"
    ],
-   "updated": "2026-11-16"
+   "updated": "2026-11-27",
+   "mrp": 479,
+   "offerPrice": 407
   },
   {
    "id": "kolkata-landmarks-jigsaw-puzzle-120-pcs",
    "name": "Kolkata Landmarks Jigsaw Puzzle (120 pcs)",
    "category": "puzzles",
-   "price": 449,
+   "price": 379,
    "image": "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/kolkata-landmarks-jigsaw-puzzle-120-pcs/main-white.jpg",
    "images": [
     "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/kolkata-landmarks-jigsaw-puzzle-120-pcs/lifestyle-table.jpg",
@@ -52,13 +54,15 @@
     "puzzle",
     "puzzles"
    ],
-   "updated": "2026-11-16"
+   "updated": "2026-11-27",
+   "mrp": 379,
+   "offerPrice": 322
   },
   {
    "id": "alpana-cushion-covers-set-of-2-16-16-in",
    "name": "Alpana Cushion Covers – Set of 2 (16×16 in)",
    "category": "cushions",
-   "price": 799,
+   "price": 989,
    "image": "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/alpana-cushion-covers-set-of-2-16-16-in/main-white.jpg",
    "images": [
     "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/alpana-cushion-covers-set-of-2-16-16-in/lifestyle-sofa.jpg",
@@ -77,7 +81,9 @@
     "cushion",
     "cushions"
    ],
-   "updated": "2026-11-16"
+   "updated": "2026-11-27",
+   "mrp": 989,
+   "offerPrice": 841
   },
   {
    "id": "alpana-festive-dining-set-table-runner-4-placemats",
@@ -130,13 +136,15 @@
     "puzzle",
     "puzzles"
    ],
-   "updated": "2026-11-16"
+   "updated": "2026-11-27",
+   "mrp": 449,
+   "offerPrice": 382
   },
   {
    "id": "money-formulas-desk-mat-80-33-cm",
    "name": "Money Formulas Desk Mat (80×33 cm)",
    "category": "desk-mats",
-   "price": 749,
+   "price": 729,
    "image": "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/money-formulas-desk-mat-80-33-cm/main-white.jpg",
    "images": [
     "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/money-formulas-desk-mat-80-33-cm/lifestyle-desk.jpg",
@@ -157,13 +165,15 @@
     "mat",
     "money"
    ],
-   "updated": "2026-11-16"
+   "updated": "2026-11-27",
+   "mrp": 729,
+   "offerPrice": 620
   },
   {
    "id": "bengali-bazaar-bag-typography-tote",
    "name": "Bengali \"Bazaar Bag\" Typography Tote",
    "category": "totes",
-   "price": 599,
+   "price": 609,
    "image": "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/bengali-bazaar-bag-typography-tote/main-white.jpg",
    "images": [
     "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/bengali-bazaar-bag-typography-tote/lifestyle-hanging.jpg",
@@ -184,7 +194,9 @@
     "totes",
     "typography"
    ],
-   "updated": "2026-11-16"
+   "updated": "2026-11-27",
+   "mrp": 609,
+   "offerPrice": 518
   },
   {
    "id": "kolam-pattern-cushion-covers-set-of-2-16-16-in",
@@ -267,13 +279,15 @@
     "money-basics-in-hindi",
     "paise"
    ],
-   "updated": "2026-11-16"
+   "updated": "2026-11-27",
+   "mrp": 749,
+   "offerPrice": 637
   },
   {
    "id": "kolam-festive-dining-set-table-runner-4-placemats",
    "name": "Kolam Festive Dining Set – Table Runner + 4 Placemats",
    "category": "dining",
-   "price": 949,
+   "price": 879,
    "image": "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/kolam-festive-dining-set-table-runner-4-placemats/main-white.jpg",
    "images": [
     "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/kolam-festive-dining-set-table-runner-4-placemats/lifestyle-table.jpg",
@@ -295,7 +309,9 @@
     "runner",
     "table"
    ],
-   "updated": "2026-11-16"
+   "updated": "2026-11-27",
+   "mrp": 879,
+   "offerPrice": 747
   },
   {
    "id": "2027-year-planner-desk-mat-with-indian-festival-dates-80-33-cm",
@@ -324,13 +340,15 @@
     "planner",
     "year"
    ],
-   "updated": "2026-11-16"
+   "updated": "2026-11-27",
+   "mrp": 749,
+   "offerPrice": 637
   },
   {
    "id": "times-tables-study-desk-mat-for-kids-80-33-cm",
    "name": "Times Tables Study Desk Mat for Kids (80×33 cm)",
    "category": "desk-mats",
-   "price": 699,
+   "price": 719,
    "image": "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/times-tables-study-desk-mat-for-kids-80-33-cm/main-white.jpg",
    "images": [
     "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/times-tables-study-desk-mat-for-kids-80-33-cm/lifestyle-study-table.jpg",
@@ -353,13 +371,15 @@
     "tables-1-to-20-always-in-view",
     "times"
    ],
-   "updated": "2026-11-16"
+   "updated": "2026-11-27",
+   "mrp": 719,
+   "offerPrice": 611
   },
   {
    "id": "could-have-been-an-email-office-humour-tote",
    "name": "\"Could Have Been an Email\" Office Humour Tote",
    "category": "totes",
-   "price": 899,
+   "price": 669,
    "image": "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/could-have-been-an-email-office-humour-tote/main-white.jpg",
    "images": [
     "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/could-have-been-an-email-office-humour-tote/the-design.jpg",
@@ -381,14 +401,15 @@
     "tote",
     "totes"
    ],
-   "offerPrice": 674,
-   "mrp": 899
+   "offerPrice": 569,
+   "mrp": 669,
+   "updated": "2026-11-27"
   },
   {
    "id": "madhubani-fish-peacock-lotus-cushion-covers-set-of-3-for-sofa-16-16-in",
    "name": "Madhubani Fish, Peacock & Lotus Cushion Covers – Set of 3 for Sofa (16×16 in)",
    "category": "cushions",
-   "price": 1499,
+   "price": 989,
    "image": "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/madhubani-fish-peacock-lotus-cushion-covers-set-of-3-for-sofa-16-16-in/main-white.jpg",
    "images": [
     "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/madhubani-fish-peacock-lotus-cushion-covers-set-of-3-for-sofa-16-16-in/lifestyle-sofa.jpg",
@@ -411,15 +432,16 @@
     "peacock",
     "sofa"
    ],
-   "offerPrice": 1274,
-   "mrp": 1499,
-   "updatedAt": "2026-11-22T17:16:54.853Z"
+   "offerPrice": 841,
+   "mrp": 989,
+   "updatedAt": "2026-11-22T17:16:54.853Z",
+   "updated": "2026-11-27"
   },
   {
    "id": "accountant-s-desk-mat-excel-tally-gst-due-dates-80-33-cm",
    "name": "Accountant's Desk Mat – Excel, Tally & GST Due Dates (80×33 cm)",
    "category": "desk-mats",
-   "price": 749,
+   "price": 719,
    "image": "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/accountant-s-desk-mat-excel-tally-gst-due-dates-80-33-cm/main-white.jpg",
    "images": [
     "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/accountant-s-desk-mat-excel-tally-gst-due-dates-80-33-cm/lifestyle-desk.jpg",
@@ -444,13 +466,15 @@
     "shortcuts-where-you-work",
     "tally"
    ],
-   "updated": "2026-11-16"
+   "updated": "2026-11-27",
+   "mrp": 719,
+   "offerPrice": 611
   },
   {
    "id": "times-tables-kids-sipper-bottle-750-ml",
    "name": "Times-Tables Kids Sipper Bottle (750 ml)",
    "category": "drinkware",
-   "price": 649,
+   "price": 639,
    "image": "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/times-tables-kids-sipper-bottle-750-ml/main-white.jpg",
    "images": [
     "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/times-tables-kids-sipper-bottle-750-ml/lifestyle-study-desk.jpg",
@@ -472,13 +496,15 @@
     "tables-2-to-10-all-around",
     "times"
    ],
-   "updated": "2026-11-16"
+   "updated": "2026-11-27",
+   "mrp": 639,
+   "offerPrice": 543
   },
   {
    "id": "kolam-large-tote-bag-all-over-print",
    "name": "Kolam Large Tote Bag (all-over print)",
    "category": "totes",
-   "price": 799,
+   "price": 829,
    "image": "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/kolam-large-tote-bag-all-over-print/main-white.jpg",
    "images": [
     "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/kolam-large-tote-bag-all-over-print/lifestyle-table.jpg",
@@ -502,7 +528,9 @@
     "tote",
     "totes"
    ],
-   "updated": "2026-11-16"
+   "updated": "2026-11-27",
+   "mrp": 829,
+   "offerPrice": 705
   },
   {
    "id": "sankranti-pongal-kolam-greeting-cards-pack-of-10",
@@ -529,13 +557,15 @@
     "pongal",
     "sankranti"
    ],
-   "updated": "2026-11-16"
+   "updated": "2026-11-27",
+   "mrp": 499,
+   "offerPrice": 424
   },
   {
    "id": "solar-system-study-desk-mat-for-kids-80-33-cm",
    "name": "Solar System Study Desk Mat for Kids (80×33 cm)",
    "category": "desk-mats",
-   "price": 699,
+   "price": 719,
    "image": "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/solar-system-study-desk-mat-for-kids-80-33-cm/main-white.jpg",
    "images": [
     "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/solar-system-study-desk-mat-for-kids-80-33-cm/closeup-print.jpg",
@@ -557,13 +587,15 @@
     "study",
     "system"
    ],
-   "updated": "2026-11-16"
+   "updated": "2026-11-27",
+   "mrp": 719,
+   "offerPrice": 611
   },
   {
    "id": "english-phonics-study-desk-mat-for-kids-80-33-cm",
    "name": "English Phonics Study Desk Mat for Kids (80×33 cm)",
    "category": "desk-mats",
-   "price": 999,
+   "price": 719,
    "image": "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/english-phonics-study-desk-mat-for-kids-80-33-cm/01-main-white.jpg",
    "images": [
     "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/english-phonics-study-desk-mat-for-kids-80-33-cm/02-lifestyle-desk.jpg",
@@ -584,14 +616,15 @@
     "phonics",
     "study"
    ],
-   "offerPrice": 849,
-   "mrp": 999
+   "offerPrice": 611,
+   "mrp": 719,
+   "updated": "2026-11-27"
   },
   {
    "id": "zelqio-bookworm-canvas-tote-bag",
    "name": "ZELQIO “बस एक और चैप्टर” Bookworm Canvas Tote Bag",
    "category": "totes",
-   "price": 799,
+   "price": 539,
    "image": "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/zelqio-bookworm-canvas-tote-bag/01-main-white-jpg-main-2000-2000-pure-white.jpg",
    "images": [
     "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/zelqio-bookworm-canvas-tote-bag/02-lifestyle-jpg-in-use-context.jpg",
@@ -610,15 +643,16 @@
     "totes",
     "zelqio"
    ],
-   "offerPrice": 679,
-   "mrp": 799,
-   "updatedAt": "2026-11-27T16:02:32.688Z"
+   "offerPrice": 458,
+   "mrp": 539,
+   "updatedAt": "2026-11-27T16:02:32.688Z",
+   "updated": "2026-11-27"
   },
   {
    "id": "warli-line-art-engraved-steel-water-bottle-750-ml",
    "name": "Warli Line-Art Engraved Steel Water Bottle (750 ml)",
    "category": "drinkware",
-   "price": 899,
+   "price": 729,
    "image": "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/warli-line-art-engraved-steel-water-bottle-750-ml/main-white.jpg",
    "images": [
     "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/warli-line-art-engraved-steel-water-bottle-750-ml/lifestyle-desk.jpg",
@@ -639,17 +673,18 @@
     "warli",
     "water"
    ],
-   "offerPrice": 764,
-   "mrp": 899,
-   "updatedAt": "2026-11-27T16:03:20.803Z"
+   "offerPrice": 620,
+   "mrp": 729,
+   "updatedAt": "2026-11-27T16:03:20.803Z",
+   "updated": "2026-11-27"
   },
   {
    "id": "kolam-pattern-cushion-covers-set-of-3-16-16-in",
    "name": "Kolam Pattern Cushion Covers – Set of 3 (16×16 in)",
    "category": "cushions",
-   "price": 1299,
-   "mrp": 1299,
-   "offerPrice": 1104,
+   "price": 989,
+   "mrp": 989,
+   "offerPrice": 841,
    "image": "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/kolam-pattern-cushion-covers-set-of-3-16-16-in/01-main-white.jpg",
    "images": [
     "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/kolam-pattern-cushion-covers-set-of-3-16-16-in/02-lifestyle-sofa.jpg",
@@ -674,9 +709,9 @@
    "id": "festivals-of-india-jigsaw-puzzle-120-pcs",
    "name": "Festivals of India Jigsaw Puzzle (120 pcs)",
    "category": "puzzles",
-   "price": 649,
-   "mrp": 649,
-   "offerPrice": 552,
+   "price": 429,
+   "mrp": 429,
+   "offerPrice": 365,
    "image": "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/festivals-of-india-jigsaw-puzzle-120-pcs/main-image-2000-2000-white-no-text.jpg",
    "images": [
     "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/festivals-of-india-jigsaw-puzzle-120-pcs/02-lifestyle-desk.jpg",
@@ -700,9 +735,9 @@
    "id": "warli-village-cushion-covers-set-of-3-16-16-in",
    "name": "Warli Village Cushion Covers – Set of 3 (16×16 in)",
    "category": "cushions",
-   "price": 1299,
-   "mrp": 1299,
-   "offerPrice": 1104,
+   "price": 989,
+   "mrp": 989,
+   "offerPrice": 841,
    "image": "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/warli-village-cushion-covers-set-of-3-16-16-in/01-main-white.jpg",
    "images": [
     "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/warli-village-cushion-covers-set-of-3-16-16-in/02-lifestyle-sofa.jpg",
@@ -728,9 +763,9 @@
    "id": "tamil-uyir-ezhuthu-picture-jigsaw-puzzle-120-pcs",
    "name": "Tamil Uyir Ezhuthu Picture Jigsaw Puzzle (120 pcs)",
    "category": "puzzles",
-   "price": 599,
-   "mrp": 599,
-   "offerPrice": 509,
+   "price": 579,
+   "mrp": 579,
+   "offerPrice": 492,
    "image": "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/tamil-uyir-ezhuthu-picture-jigsaw-puzzle-120-pcs/main-white.jpg",
    "images": [
     "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/tamil-uyir-ezhuthu-picture-jigsaw-puzzle-120-pcs/closeup.jpg",
@@ -753,9 +788,9 @@
    "id": "hindi-varnamala-picture-jigsaw-puzzle-120-pcs",
    "name": "Hindi Varnamala Picture Jigsaw Puzzle (120 pcs)",
    "category": "puzzles",
-   "price": 599,
-   "mrp": 599,
-   "offerPrice": 509,
+   "price": 429,
+   "mrp": 429,
+   "offerPrice": 365,
    "image": "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/hindi-varnamala-picture-jigsaw-puzzle-120-pcs/main-image-2000-2000-white-no-text.jpg",
    "images": [
     "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/hindi-varnamala-picture-jigsaw-puzzle-120-pcs/02-lifestyle-desk.jpg",
@@ -781,9 +816,9 @@
    "id": "marathi-mulakshare-picture-jigsaw-puzzle-120-pcs",
    "name": "Marathi Mulakshare Picture Jigsaw Puzzle (120 pcs)",
    "category": "puzzles",
-   "price": 449,
-   "mrp": 449,
-   "offerPrice": 382,
+   "price": 429,
+   "mrp": 429,
+   "offerPrice": 365,
    "image": "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/marathi-mulakshare-picture-jigsaw-puzzle-120-pcs/main-image-2000-2000-white-no-text.jpg",
    "images": [
     "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/marathi-mulakshare-picture-jigsaw-puzzle-120-pcs/02-lifestyle-desk.jpg",
@@ -808,9 +843,9 @@
    "id": "indian-folk-style-christmas-new-year-cards-pack-of-10",
    "name": "Indian Folk-Style Christmas & New Year Cards – Pack of 10",
    "category": "cards",
-   "price": 649,
-   "mrp": 649,
-   "offerPrice": 552,
+   "price": 629,
+   "mrp": 629,
+   "offerPrice": 535,
    "image": "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/indian-folk-style-christmas-new-year-cards-pack-of-10/main-white.jpg",
    "images": [
     "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/indian-folk-style-christmas-new-year-cards-pack-of-10/lifestyle-table.jpg",
@@ -836,9 +871,9 @@
    "id": "zelqio-saraswati-puja-bangla-barnamala-study-desk-mat-for-kids-80-33-cm",
    "name": "ZELQIO Saraswati Puja Bangla Barnamala Study Desk Mat for Kids (80×33 cm)",
    "category": "desk-mats",
-   "price": 1099,
-   "mrp": 1099,
-   "offerPrice": 934,
+   "price": 669,
+   "mrp": 669,
+   "offerPrice": 569,
    "image": "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/zelqio-saraswati-puja-bangla-barnamala-study-desk-mat-for-kids-80-33-cm/listing-image-1-main-white-bg.jpg",
    "images": [
     "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/zelqio-saraswati-puja-bangla-barnamala-study-desk-mat-for-kids-80-33-cm/listing-image-2-lifestyle-on-desk.jpg",
@@ -866,9 +901,9 @@
    "id": "zelqio-horn-ok-please-indian-truck-art-iphone-17-clear-case",
    "name": "ZELQIO “Horn OK Please” Indian Truck-Art iPhone 17 Clear Case",
    "category": "accessories",
-   "price": 899,
-   "mrp": 899,
-   "offerPrice": 764,
+   "price": 569,
+   "mrp": 569,
+   "offerPrice": 484,
    "image": "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/zelqio-horn-ok-please-indian-truck-art-iphone-17-clear-case/listing-image-1-main-white-bg.jpg",
    "images": [
     "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/zelqio-horn-ok-please-indian-truck-art-iphone-17-clear-case/listing-image-2-lifestyle-on-desk.jpg",
