@@ -613,6 +613,35 @@
    "offerPrice": 679,
    "mrp": 799,
    "updatedAt": "2026-11-27T16:02:32.688Z"
+  },
+  {
+   "id": "warli-line-art-engraved-steel-water-bottle-750-ml",
+   "name": "Warli Line-Art Engraved Steel Water Bottle (750 ml)",
+   "category": "drinkware",
+   "price": 899,
+   "image": "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/warli-line-art-engraved-steel-water-bottle-750-ml/main-white.jpg",
+   "images": [
+    "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/warli-line-art-engraved-steel-water-bottle-750-ml/lifestyle-desk.jpg",
+    "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/warli-line-art-engraved-steel-water-bottle-750-ml/lifestyle-gym.jpg",
+    "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/warli-line-art-engraved-steel-water-bottle-750-ml/closeup-engraving.jpg",
+    "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/warli-line-art-engraved-steel-water-bottle-750-ml/whats-included.jpg",
+    "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/warli-line-art-engraved-steel-water-bottle-750-ml/size-guide.jpg",
+    "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/warli-line-art-engraved-steel-water-bottle-750-ml/benefits.jpg"
+   ],
+   "description": "Warli art is one of India's oldest folk painting styles, traditionally drawn by tribal artists of Maharashtra in simple white lines: circles for a dance, tri…",
+   "tags": [
+    "art",
+    "bottle",
+    "drinkware",
+    "engraved",
+    "line",
+    "steel",
+    "warli",
+    "water"
+   ],
+   "offerPrice": 764,
+   "mrp": 899,
+   "updatedAt": "2026-11-27T16:03:20.803Z"
   }
  ]
 }
