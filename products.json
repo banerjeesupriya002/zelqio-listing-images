@@ -925,6 +925,32 @@
     "truck"
    ],
    "updated": "2026-11-27"
+  },
+  {
+   "id": "zelqio-bengali-winter-sweatshirt",
+   "name": "ZELQIO “শীতের রোদ্দুর” Bengali Winter Sweatshirt",
+   "category": "apparel",
+   "price": 1119,
+   "image": "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/zelqio-bengali-winter-sweatshirt/main-image-2000-2000-white-no-text.jpg",
+   "images": [
+    "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/zelqio-bengali-winter-sweatshirt/lifestyle-desk.jpg",
+    "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/zelqio-bengali-winter-sweatshirt/lifestyle-angle.jpg",
+    "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/zelqio-bengali-winter-sweatshirt/closeup-print.jpg",
+    "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/zelqio-bengali-winter-sweatshirt/whats-on-the-front.jpg",
+    "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/zelqio-bengali-winter-sweatshirt/size-guide.jpg",
+    "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/zelqio-bengali-winter-sweatshirt/benefits.jpg"
+   ],
+   "description": "Some mornings in winter, the sun feels like a small gift.",
+   "tags": [
+    "apparel",
+    "bengali",
+    "sweatshirt",
+    "winter",
+    "zelqio"
+   ],
+   "offerPrice": 951,
+   "mrp": 1119,
+   "updatedAt": "2026-11-27T18:08:33.945Z"
   }
  ]
 }
