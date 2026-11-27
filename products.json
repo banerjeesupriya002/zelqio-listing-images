@@ -844,8 +844,6 @@
    "name": "Indian Folk-Style Christmas & New Year Cards – Pack of 10",
    "category": "cards",
    "price": 629,
-   "mrp": 629,
-   "offerPrice": 535,
    "image": "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/indian-folk-style-christmas-new-year-cards-pack-of-10/main-white.jpg",
    "images": [
     "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/indian-folk-style-christmas-new-year-cards-pack-of-10/lifestyle-table.jpg",
@@ -865,7 +863,9 @@
     "style",
     "year"
    ],
-   "updated": "2026-11-27"
+   "offerPrice": 535,
+   "mrp": 629,
+   "updatedAt": "2026-11-27T18:05:05.799Z"
   },
   {
    "id": "zelqio-saraswati-puja-bangla-barnamala-study-desk-mat-for-kids-80-33-cm",
