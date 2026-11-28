@@ -1,6 +1,6 @@
 {
  "discountPercent": 15,
- "updated": "2026-11-27",
+ "updated": "2026-11-28",
  "products": [
   {
    "id": "2027-family-budget-savings-planner-a5",
@@ -954,6 +954,35 @@
    "offerPrice": 951,
    "mrp": 1119,
    "updatedAt": "2026-11-27T18:08:33.945Z"
+  },
+  {
+   "category": "drinkware",
+   "description": "Some reminders are more fun than others.",
+   "id": "zelqio-paani-peete-raho-time-marker-steel-tumbler-with-straw-20-oz",
+   "image": "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/zelqio-paani-peete-raho-time-marker-steel-tumbler-with-straw-20-oz/01-main-tumbler.jpg",
+   "images": [
+    "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/zelqio-paani-peete-raho-time-marker-steel-tumbler-with-straw-20-oz/02-lifestyle-desk.jpg",
+    "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/zelqio-paani-peete-raho-time-marker-steel-tumbler-with-straw-20-oz/03-closeup-print.jpg",
+    "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/zelqio-paani-peete-raho-time-marker-steel-tumbler-with-straw-20-oz/04-whats-on-it.jpg",
+    "https://raw.githubusercontent.com/banerjeesupriya002/zelqio-listing-images/main/zelqio-paani-peete-raho-time-marker-steel-tumbler-with-straw-20-oz/05-benefits.jpg"
+   ],
+   "mrp": 1058,
+   "name": "ZELQIO “Paani Peete Raho” Time-Marker Steel Tumbler with Straw (20 oz)",
+   "offerPrice": 899,
+   "price": 1058,
+   "tags": [
+    "5-friendly-time-reminders",
+    "drinkware",
+    "marker",
+    "paani",
+    "peete",
+    "raho",
+    "steel",
+    "straw",
+    "time",
+    "tumbler"
+   ],
+   "updatedAt": "2026-11-28T07:14:41.486Z"
   }
  ]
 }
